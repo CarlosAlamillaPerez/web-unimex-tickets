@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="TicketsSistemas.MASTERPAGE.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Tickets Sistemas</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+    <link rel="stylesheet" href="../Content/MasterPage/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../Content/MasterPage/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Content/MasterPage/css/templatemo-style.css">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="reportsPage">
+    <form id="form1" runat="server">
+        <div class="" id="home">
+            <nav class="navbar navbar-expand-xl">
+                <div class="container h-100">
+                    <a class="navbar-brand" href="#">
+                        <asp:ImageButton runat="server" ID="imgLogo" ImageUrl="~/Imagenes/LogoUnimex1.png" Width="40%" Enabled="false" />
+                    </a>
+                    <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-sign-in-alt tm-nav-icon"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link d-block" href="../Login.aspx">
+                                    <asp:Label ID="lblCerrarSesion" runat="server" Text="Usuario" ToolTip="Cerrar Sesión"></asp:Label>
+                                    <img class="img-profile rounded-circle" src="../Imagenes/User.png" width="10%">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+
+    <script src="../Content/MasterPage/js/jquery-3.3.1.min.js"></script>
+    <script src="../Content/MasterPage/js/moment.min.js"></script>
+    <script src="../Content/MasterPage/js/Chart.min.js"></script>
+    <script src="../Content/MasterPage/js/bootstrap.min.js"></script>
+    <script src="../Content/MasterPage/js/tooplate-scripts.js"></script>
+
+</body>
+</html>

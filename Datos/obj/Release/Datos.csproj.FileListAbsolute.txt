@@ -1,0 +1,16 @@
+C:\Publicaciones\TicketsSistemas\Testing\TicketsSistemas\Datos\bin\Release\Datos.dll
+C:\Publicaciones\TicketsSistemas\Testing\TicketsSistemas\Datos\bin\Release\Datos.pdb
+C:\Publicaciones\TicketsSistemas\Testing\TicketsSistemas\Datos\bin\Release\Entidades.dll
+C:\Publicaciones\TicketsSistemas\Testing\TicketsSistemas\Datos\bin\Release\Entidades.pdb
+C:\Publicaciones\TicketsSistemas\Testing\TicketsSistemas\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
+C:\Publicaciones\TicketsSistemas\Testing\TicketsSistemas\Datos\obj\Release\Datos.dll
+C:\Publicaciones\TicketsSistemas\Testing\TicketsSistemas\Datos\obj\Release\Datos.pdb
+C:\Karem\Codigos\TicketsSistemas\Testing\TicketsSistemas\Datos\bin\Release\Datos.dll
+C:\Karem\Codigos\TicketsSistemas\Testing\TicketsSistemas\Datos\bin\Release\Datos.pdb
+C:\Karem\Codigos\TicketsSistemas\Testing\TicketsSistemas\Datos\bin\Release\Entidades.dll
+C:\Karem\Codigos\TicketsSistemas\Testing\TicketsSistemas\Datos\bin\Release\Entidades.pdb
+C:\Karem\Codigos\TicketsSistemas\Testing\TicketsSistemas\Datos\obj\Release\Datos.csproj.AssemblyReference.cache
+C:\Karem\Codigos\TicketsSistemas\Testing\TicketsSistemas\Datos\obj\Release\Datos.csproj.CoreCompileInputs.cache
+C:\Karem\Codigos\TicketsSistemas\Testing\TicketsSistemas\Datos\obj\Release\Datos.csproj.CopyComplete
+C:\Karem\Codigos\TicketsSistemas\Testing\TicketsSistemas\Datos\obj\Release\Datos.dll
+C:\Karem\Codigos\TicketsSistemas\Testing\TicketsSistemas\Datos\obj\Release\Datos.pdb

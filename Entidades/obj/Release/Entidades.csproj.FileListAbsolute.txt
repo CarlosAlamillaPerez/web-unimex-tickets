@@ -1,0 +1,11 @@
+C:\Publicaciones\TicketsSistemas\Testing\TicketsSistemas\Entidades\bin\Release\Entidades.dll
+C:\Publicaciones\TicketsSistemas\Testing\TicketsSistemas\Entidades\bin\Release\Entidades.pdb
+C:\Publicaciones\TicketsSistemas\Testing\TicketsSistemas\Entidades\obj\Release\Entidades.csprojResolveAssemblyReference.cache
+C:\Publicaciones\TicketsSistemas\Testing\TicketsSistemas\Entidades\obj\Release\Entidades.dll
+C:\Publicaciones\TicketsSistemas\Testing\TicketsSistemas\Entidades\obj\Release\Entidades.pdb
+C:\Karem\Codigos\TicketsSistemas\Testing\TicketsSistemas\Entidades\bin\Release\Entidades.dll
+C:\Karem\Codigos\TicketsSistemas\Testing\TicketsSistemas\Entidades\bin\Release\Entidades.pdb
+C:\Karem\Codigos\TicketsSistemas\Testing\TicketsSistemas\Entidades\obj\Release\Entidades.csproj.AssemblyReference.cache
+C:\Karem\Codigos\TicketsSistemas\Testing\TicketsSistemas\Entidades\obj\Release\Entidades.csproj.CoreCompileInputs.cache
+C:\Karem\Codigos\TicketsSistemas\Testing\TicketsSistemas\Entidades\obj\Release\Entidades.dll
+C:\Karem\Codigos\TicketsSistemas\Testing\TicketsSistemas\Entidades\obj\Release\Entidades.pdb

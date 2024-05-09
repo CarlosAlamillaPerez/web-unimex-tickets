@@ -1,0 +1,223 @@
+﻿/*/////////////////////////////////////////////////////////////// PRIMERA SECCIÓN DE LA PÁGINA (NUEVO TICKET) ////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.container {
+    margin: 1%;
+}
+
+.new-ticket {
+    border-right: solid;
+    border-right-color: #ccc;
+}
+
+.new-ticket-title {
+    font-size: 25px;
+    font-weight: 700;
+    color: #00539b;
+}
+
+.new-ticket-subtitle {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+.file-return {
+    margin-top: 0.7rem;
+}
+
+#nombre_file {
+    color: green;
+    font-size: small;
+}
+
+.file-upload {
+    height: 50px;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #FFFFFF;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, #004F93 50%, #FFFFFF 50%);
+    background-size: 100% 200%;
+    transition: all 1s;
+    color: #FFFFFF;
+}
+
+    .file-upload:hover {
+        background-position: 0 -100%;
+        color: #2590EB;
+    }
+
+input[type='file'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+/*/////////////////////////////////////////////////////////////// SEGUNDA SECCIÓN DE LA PÁGINA (TABLA DE TICKETS) //////////////////////////////////////////////////////////////////////////////////////////////////*/
+.btn-title {
+    padding-left: 1%;
+}
+
+.btn-title-item {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #00539b;
+    border: none;
+    background: none;
+    padding-left: 1%;
+    cursor: pointer;
+    transition: color 0.5s, background-position 1s;
+    background-image: linear-gradient(to bottom, #FFFFFF 50%, #004F93 50%);
+    background-size: 100% 200%;
+}
+
+    .btn-title-item:hover {
+        background-position: 0 -100%;
+        color: white;
+    }
+
+    .btn-title-item:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+/*////////////////////////////// TABLA-SQL //////////////////////////////*/
+/* Encabezado de la tabla */
+.TicketsTable thead th {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    text-align: center !important;
+}
+
+/* Celdas de datos de la tabla */
+.TicketsTable tbody td {
+    font-family: Verdana, sans-serif;
+    font-size: 11px;
+    text-align: center;
+}
+
+/* Campo de búsqueda */
+.dt-search {
+    font-family: Verdana, sans-serif;
+    font-size: 12px;
+    padding: 5px;
+}
+
+/* Selección de registros por página (5,10,20) */
+.dt-length {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    padding: 5px;
+}
+
+/* Información de registros (1 al 5 de un total de 50 registros) */
+#TicketsTable_info {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #666666;
+}
+
+#TicketsTable2_info {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #666666;
+}
+
+/* Tamaño de íconos */
+.table-icon {
+    font-size: 25px;
+}
+
+/* Columna de INCIDENCIA */
+.column-incidencia {
+    word-wrap: break-word;
+    max-width: 195px;
+}
+/*  Botones de paginación */
+.dt-paging {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    padding: 5px 10px;
+}
+/* Botón de eliminar */
+.btn-table {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.btn-table-general i {
+    color: #007bff;
+}
+
+.btn-table-general:hover i {
+    color: #0056b3;
+}
+
+.btn-table-general:focus {
+    outline: none;
+}
+
+.btn-table-success:hover {
+    background-color: transparent;
+}
+.btn-success:not(:disabled):not(.disabled):active {
+    background-color: transparent;
+}
+
+.btn-table-success:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-table-success i {
+    color: #8cd762;
+}
+
+    .btn-table-success:hover i {
+        color: #84af6c;
+    }
+
+.btn-table-error:focus {
+    outline: none;
+}
+
+.btn-table-error i {
+    color: #ff5050;
+}
+
+.btn-table-error:hover i {
+    color: #d46666;
+}
+
+/*Modal Detalles*/
+.md-par {
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.md-inpar {
+    color: black;
+    text-align: center;
+}
+/*////////////////////////////// TABLA-SQL //////////////////////////////*/
+
+
+
+/*////////////////////////////// ALERTAS //////////////////////////////*/
+
+.swal2-confirm, .swal2-cancel {
+    margin-right: 10px; /* Ajusta el margen entre los botones */
+}
+/*////////////////////////////// ALERTAS //////////////////////////////*/
+

@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo es utilizado por el proceso de paquete/publicación de nuestro proyecto Web. Puede personalizar el comportamiento de este proceso
+editando este archivo MSBuild. Para conocer más acerca de esto, visite http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\dbd\Documents\PublicacionesLocales\TestingTicketsSistemas</_PublishTargetUrl>
+    <History>True|2023-10-26T16:59:53.6416834Z;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>08/07/2018 18:16:00</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/Datos.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/Datos.pdb">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/Entidades.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/Entidades.pdb">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>12/07/2015 19:04:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>03/10/2016 14:26:18</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>03/10/2016 14:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>03/09/2016 12:00:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>03/10/2016 14:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>03/10/2016 14:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>03/09/2016 11:57:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/Negocio.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/Negocio.pdb">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/TicketsSistemas.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/TicketsSistemas.pdb">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/ControlUpload.css">
+      <publishTime>12/07/2019 12:30:07</publishTime>
+    </File>
+    <File Include="Content/cssLogin/css/all.min.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/css/bootstrap.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/css/bootstrap.min.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/css/Login.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/css/main.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/css/MasterCss.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/css/sb-admin-2.min.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/css/util.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/scripts/ai.0.22.9-build00167.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/scripts/ai.0.22.9-build00167.min.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/scripts/anime.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/scripts/bootstrap.bundle.min.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/scripts/bootstrap.min.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/scripts/chart-area-demo.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/scripts/chart-pie-demo.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/scripts/Chart.min.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/scripts/jquery.easing.min.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/scripts/jquery.min.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/scripts/MasterJs.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/cssLogin/scripts/sb-admin-2.min.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/css/bootstrap.min.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/css/fontawesome.min.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/css/templatemo-style.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/jquery-ui-datepicker/AUTHORS.txt">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/jquery-ui-datepicker/external/jquery/jquery.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/jquery-ui-datepicker/index.html">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/jquery-ui-datepicker/jquery-ui.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/jquery-ui-datepicker/jquery-ui.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/jquery-ui-datepicker/jquery-ui.min.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/jquery-ui-datepicker/jquery-ui.min.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/jquery-ui-datepicker/jquery-ui.structure.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/jquery-ui-datepicker/jquery-ui.structure.min.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/jquery-ui-datepicker/jquery-ui.theme.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/jquery-ui-datepicker/jquery-ui.theme.min.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/jquery-ui-datepicker/LICENSE.txt">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/jquery-ui-datepicker/package.json">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/js/bootstrap.min.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/js/Chart.min.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/js/jquery-3.3.1.min.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/js/moment.min.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/js/tooplate-scripts.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/webfonts/fa-brands-400.eot">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/webfonts/fa-brands-400.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/webfonts/fa-brands-400.ttf">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/webfonts/fa-brands-400.woff">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/webfonts/fa-brands-400.woff2">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/webfonts/fa-regular-400.eot">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/webfonts/fa-regular-400.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/webfonts/fa-regular-400.ttf">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/webfonts/fa-regular-400.woff">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/webfonts/fa-regular-400.woff2">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/webfonts/fa-solid-900.eot">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/webfonts/fa-solid-900.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/webfonts/fa-solid-900.ttf">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/webfonts/fa-solid-900.woff">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/MasterPage/webfonts/fa-solid-900.woff2">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Atrás.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Accept.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/back.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Excel.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Exit-1.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Exit-2.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/login.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/logout.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Mensajes/Aceptar.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Mensajes/Aviso.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Mensajes/Cancelar.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Mensajes/Pregunta.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Navigation/cancel.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Navigation/checked.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Navigation/close.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Navigation/door.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Navigation/help.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Navigation/house.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Navigation/multi-tab.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Navigation/password-1.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Navigation/password.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Navigation/question.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Navigation/Warning-4.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Navigation/warning.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Pdf.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Power-off.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Question.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/siren-rojo.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Warning-2.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Botones/Warning-3.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/CargarArchivo.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/delete-row.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/descarga.png">
+      <publishTime>09/12/2019 16:58:11</publishTime>
+    </File>
+    <File Include="Imagenes/Detalle.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Login/Banner.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Login/BannerP.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Login/bg-01.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Login/Fondo.jpg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Login/LogoUnimex.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/Login/LogoUnimex1.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/LogoUnimex1.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/select-row.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Imagenes/User.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="MASTERPAGE/MasterPage.Master">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="MensajeError.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Presentacion/ControlTicketsSoporte.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="scripts/ai.0.22.9-build00167.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="scripts/ai.0.22.9-build00167.min.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="UserControl/Message.ascx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
