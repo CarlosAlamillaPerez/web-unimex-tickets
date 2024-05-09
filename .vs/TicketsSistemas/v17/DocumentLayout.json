@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "TicketsSistemas\\Content\\MasterPage\\js\\soporte-tickets.js",
               "ToolTip": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Content\\MasterPage\\js\\soporte-tickets.js",
               "RelativeToolTip": "TicketsSistemas\\Content\\MasterPage\\js\\soporte-tickets.js",
-              "ViewState": "AQIAAIYAAAAAAAAAAAAowDsBAAAAAAAA",
+              "ViewState": "AQIAAK4BAAAAAAAAAAAAABoCAACJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-05-07T18:05:49.145Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "TicketsSistemas\\Presentacion\\ControlTicketsSoporte.aspx.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAAADQBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T22:20:40.52Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-07T22:20:40.52Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Negocio\\Tickets\\Negocio_Tickets.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAD0AAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T15:33:33.003Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-09T15:33:33.003Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "Datos\\Tickets\\Datos_Tickets.cs",
               "ViewState": "AQIAAB8AAAAAAAAAAAAUwFcBAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T00:43:06.963Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-09T00:43:06.963Z"
             }
           ]
         }
