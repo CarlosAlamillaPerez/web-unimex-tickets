@@ -78,7 +78,7 @@ new DataTable('#TicketsTable', {
             orderable: false,
             searchable: false,
             render: function (data, type, row, meta) {
-                return '<button class="btn-informacion btn-table btn-table-general" data-id="' + row.Id + '" title="HISTORIAL" onclick="mostrarDetallesTicket(this)"><i class="fa-solid fa-regular fa-circle-info table-icon"></i></button>';
+                return '<button class="btn-informacion btn-table btn-table-general" data-id="' + row.Id + '" title="HISTORIAL"><i class="fa-solid fa-regular fa-circle-info table-icon"></i></button>';
             }
         },
         {
@@ -363,7 +363,46 @@ $('#TicketsTable').on('click', 'button.btn-informacion', async function (event) 
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (response) {
-            alert_time("Archivo", "success");
+            const tablaHTML =`
+            <div>
+                <table border="0" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Estatus</th>
+                            <th>Fecha</th>
+                            <th>Mensaje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fila 1, Col 1</td>
+                            <td>Fila 1, Col 2</td>
+                            <td>Fila 1, Col 3</td>
+                        </tr>
+                        <tr>
+                            <td>Fila 2, Col 1</td>
+                            <td>Fila 2, Col 2</td>
+                            <td>Fila 2, Col 3</td>
+                        </tr>
+                        <tr>
+                            <td>Fila 3, Col 1</td>
+                            <td>Fila 3, Col 2</td>
+                            <td>Fila 3, Col 3</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="1">Calificación: ####</td>
+                            <td colspan="2">Tiempo de respuesta:<br> 00 horas 00 minutos</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>`;
+                Swal.fire({
+                    title: 'Ticket #' + id_ticket,
+                    html: tablaHTML,
+                    confirmButtonText: 'Cerrar'
+                });
         },
         error: function (xhr, status, error) {
             alert_general("Error", "Error inesperado con el Modal", "error");
@@ -537,3 +576,4 @@ $('#TicketsTable2').on('click', 'button.btn-success', async function (event) {
 //////// FIN BOTONES DE TABLA  //////
 
 ////////////////////////////////////////////////  FIN ALERTAS ///////////////////////////////////////////////////////////////////////////
+

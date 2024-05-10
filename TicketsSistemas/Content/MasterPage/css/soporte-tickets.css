@@ -199,17 +199,16 @@ input[type='file'] {
     color: #d46666;
 }
 
-/*Modal Detalles*/
-.md-par {
-    color: black;
-    text-align: center;
-    font-weight: bold;
-}
+/*Modal Informacion*/
+/*.md-inf-contenedor {
+    display: flex;
+    justify-content: center;
+}*/
 
-.md-inpar {
-    color: black;
-    text-align: center;
-}
+/*.md-inf-table {
+    border: 1px;
+    width: 100%;
+}*/
 /*////////////////////////////// TABLA-SQL //////////////////////////////*/
 
 

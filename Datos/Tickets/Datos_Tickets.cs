@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Web;
 using Entidades;
-using System.Net.Mail;
-using System.Net;
 using Entidades.Tickets;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections;
 
 namespace Datos.Tickets
 {
@@ -155,7 +148,7 @@ namespace Datos.Tickets
                 string partereg = oDesEnc.Desencripta(ConfigurationManager.ConnectionStrings["ConexionMP"].ConnectionString);
                 conexionM = new SqlConnection(BaseGeneralReg.ToString().Trim() + partereg.ToString().Trim());
 
-                using (SqlCommand cmd = new SqlCommand("sp_CorreoAltaTickets", conexionM))
+                using (SqlCommand cmd = new SqlCommand("sp_Tickets_Metodo_Obtener_CorreoAltaTickets", conexionM))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_usuario", id_usuario);
@@ -200,7 +193,7 @@ namespace Datos.Tickets
             {
                 List<Cls_Tickets> Lst = new List<Cls_Tickets>();
 
-                SqlCommand cmd = new SqlCommand("sp_Muestra_Planteles_Tickets", cadenaConexion);
+                SqlCommand cmd = new SqlCommand("sp_Tickets_Metodo_Obtener_Planteles", cadenaConexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@clave_usuario", clave_usuario);
                 cmd.CommandTimeout = 0;
@@ -235,7 +228,7 @@ namespace Datos.Tickets
             {
                 List<Cls_Tickets> Lst = new List<Cls_Tickets>();
 
-                SqlCommand cmd = new SqlCommand("sp_MuestraCatTipoSoporte", cadenaConexion);
+                SqlCommand cmd = new SqlCommand("sp_Tickets_Metodo_Obtener_TipoSoporte", cadenaConexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandTimeout = 0;
 
@@ -269,7 +262,7 @@ namespace Datos.Tickets
             {
                 List<Cls_Tickets> Lst = new List<Cls_Tickets>();
 
-                SqlCommand cmd = new SqlCommand("sp_MuestraCatConceptos", cadenaConexion);
+                SqlCommand cmd = new SqlCommand("sp_Tickets_Metodo_Obtener_Conceptos", cadenaConexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_tipo_soporte", id_tipo_soporte);
                 cmd.CommandTimeout = 0;
@@ -501,7 +494,7 @@ namespace Datos.Tickets
             {
                 using (cadenaConexion)
                 {
-                    using (SqlCommand cmd = new SqlCommand("spTicketsSistemas_EliminaTicket", cadenaConexion))
+                    using (SqlCommand cmd = new SqlCommand("sp_Tickets_Btn_Eliminar", cadenaConexion))
                     {
                         cmd.Parameters.AddWithValue("@id_ticket", id_ticket);
                         cmd.CommandType = CommandType.StoredProcedure;

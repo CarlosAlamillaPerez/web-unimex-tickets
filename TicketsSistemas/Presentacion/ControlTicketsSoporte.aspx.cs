@@ -1,6 +1,4 @@
-﻿using System.Net;
-using System.Net.Mail;
-using Entidades.Tickets;
+﻿using Entidades.Tickets;
 using Entidades;
 using Negocio;
 using Negocio.Tickets;
