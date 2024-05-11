@@ -321,8 +321,6 @@ namespace TicketsSistemas.Presentacion
         }
         #endregion
 
-
-
         public static void alert_general(Page page, string title, string subtitle, string type)
         {
             string script = $"Swal.fire({{title: '{title}', text: '{subtitle}', icon: '{type}'}});";

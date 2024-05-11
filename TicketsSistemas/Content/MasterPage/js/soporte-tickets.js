@@ -12,14 +12,11 @@ $('.btn-title-item').click(function (event) {
 });
 
 ////////////////////////////////////////////////  INICIO TABLA       ///////////////////////////////////////////////////////////////////////
-function mostrarNombreArchivo(input) {
-    var nombreArchivo = input.value.split("\\").pop();
-    document.getElementById("nombre_file").innerHTML = nombreArchivo;
-}
 
 new DataTable('#TicketsTable', {
     processing: true,
     serverSide: true,
+    filter: true,
     ajax: {
         type: 'POST',
         url: 'ControlTicketsSoporte.aspx/TicketsTable',
@@ -39,12 +36,10 @@ new DataTable('#TicketsTable', {
             console.log(x);
         }
     },
-    filter: true,
     columns: [
         {
             data: 'Id',
         },
-        //{ data: 'Usuario' },
         { data: 'Concepto' },
         {
             data: 'Incidencia',
@@ -125,8 +120,66 @@ new DataTable('#TicketsTable', {
                 boundaryNumbers: false
             }
         }
+    },
+    createdRow: function (row, data, dataIndex) {
+        var status = data.Status;
+        var hasFile = data.HasFile;
+
+        var $btnDescargar = $('.btn-descargar', row);
+        var $btnDetalles = $('.btn-informacion', row);
+        var $btnEliminar = $('.btn-eliminar', row);
+        var $btnCalificar = $('.btn-success', row);
+
+        switch (status) {
+            case '1':
+                if (hasFile) {
+                    $btnDescargar.show();
+                } else {
+                    $btnDescargar.hide();
+                }
+                $btnDetalles.show();
+                $btnEliminar.show();
+                $btnCalificar.hide();
+                break;
+            case '2':
+                if (hasFile) {
+                    $btnDescargar.show();
+                } else {
+                    $btnDescargar.hide();
+                }
+                $btnDetalles.show();
+                $btnEliminar.hide();
+                $btnCalificar.hide();
+                break;
+            case '3':
+                if (hasFile) {
+                    $btnDescargar.show();
+                } else {
+                    $btnDescargar.hide();
+                }
+                $btnDetalles.show();
+                $btnEliminar.hide();
+                $btnCalificar.show();
+                break;
+            case '4':
+                if (hasFile) {
+                    $btnDescargar.show();
+                } else {
+                    $btnDescargar.hide();
+                }
+                $btnDetalles.show();
+                $btnEliminar.hide();
+                $btnCalificar.hide();
+                break;
+            default:
+                $btnDescargar.hide();
+                $btnDetalles.hide();
+                $btnEliminar.hide();
+                $btnCalificar.hide();
+        }
     }
 });
+
 new DataTable('#TicketsTable2', {
     processing: true,
     serverSide: true,
@@ -364,7 +417,7 @@ $('#TicketsTable').on('click', 'button.btn-descargar', async function (event) {
     });
 });
 
-/* DETALLES */
+/* INFORMACION */
 $('#TicketsTable').on('click', 'button.btn-informacion', async function (event) {
     event.preventDefault();
     var id_ticket = $(this).data('id');
@@ -459,7 +512,7 @@ $('#TicketsTable').on('click', 'button.btn-eliminar', async function (event) {
                 buttonsStyling: false
             });
             swalWithBootstrapButtons.fire({
-                title: '\u00BFDeseas eliminar este ticket?',
+                title: '\u00BFDeseas eliminar esta solicitud?',
                 text: "Esta acci\u00F3n no se puede revertir",
                 icon: "warning",
                 showCancelButton: true,
@@ -590,43 +643,3 @@ $('#TicketsTable2').on('click', 'button.btn-error', async function (event) {
 //////// FIN BOTONES DE TABLA  //////
 
 ////////////////////////////////////////////////  FIN ALERTAS ///////////////////////////////////////////////////////////////////////////
-
-function Metodo_Obtener_ModalDetalle(id_ticket) {
-    // Genera el HTML de la tabla usando el ID del ticket
-    const tablaHTML = `
-        <div>
-            <table border="0" style="width: 100%;">
-                <thead>
-                    <tr>
-                        <th>Estatus</th>
-                        <th>Fecha</th>
-                        <th>Mensaje</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Fila 1, Col 1</td>
-                        <td>Fila 1, Col 2</td>
-                        <td>Fila 1, Col 3</td>
-                    </tr>
-                    <tr>
-                        <td>Fila 2, Col 1</td>
-                        <td>Fila 2, Col 2</td>
-                        <td>Fila 2, Col 3</td>
-                    </tr>
-                    <tr>
-                        <td>Fila 3, Col 1</td>
-                        <td>Fila 3, Col 2</td>
-                        <td>Fila 3, Col 3</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="1">Calificación: ####</td>
-                        <td colspan="2">Tiempo de respuesta:<br> 00 horas 00 minutos</td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>`;
-    return tablaHTML;
-}

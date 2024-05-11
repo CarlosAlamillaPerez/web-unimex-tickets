@@ -103,7 +103,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\MasterPage\css\soporte-tickets.css" />
-    <Content Include="Content\MasterPage\js\popper.min.js" />
     <Content Include="Imagenes\Atrás.png" />
     <Content Include="Imagenes\CargarArchivo.png" />
     <Content Include="Imagenes\delete-row.png" />
@@ -219,7 +218,6 @@
     <Content Include="Imagenes\User.png" />
     <Content Include="Login.aspx" />
     <Content Include="MensajeError.aspx" />
-    <Content Include="Presentacion\ControlPrueba.aspx" />
     <Content Include="Presentacion\ControlTicketsSoporte.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
@@ -252,12 +250,6 @@
     </Compile>
     <Compile Include="MensajeError.aspx.designer.cs">
       <DependentUpon>MensajeError.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\ControlPrueba.aspx.cs">
-      <DependentUpon>ControlPrueba.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\ControlPrueba.aspx.designer.cs">
-      <DependentUpon>ControlPrueba.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\ControlTicketsSoporte.aspx.cs">
       <DependentUpon>ControlTicketsSoporte.aspx</DependentUpon>

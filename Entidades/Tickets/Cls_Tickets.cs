@@ -32,6 +32,7 @@ namespace Entidades.Tickets
 
         // Metodo_Obtener_TicketsDataTable y Metodo_Obtener_TicketsDataTable2
         public int Id { get; set; }
+        public int HasFile { get; set; }
         public string Concepto { get; set; }
         public string Incidencia { get; set; }//Utiliza: Btn_DataTable_Informacion
         public string Generado { get; set; }
@@ -47,7 +48,7 @@ namespace Entidades.Tickets
         public string Soporte { get; set; }
         public string FechaIniciado { get; set; }
         public string Usuario { get; set; }
-        public string FechaProcesso { get; set; }
+        public string FechaProceso { get; set; }
         public string UsuarioAtiende { get; set; }
         public string FechaAtendido { get; set; }
         public string Observaciones { get; set; }

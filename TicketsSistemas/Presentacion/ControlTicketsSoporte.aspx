@@ -60,7 +60,7 @@
                                     <th>ID</th>
                                     <th>CONCEPTO</th>
                                     <th>INCIDENCIA</th>
-                                    <th>GENERADO</th>
+                                    <th>SOLICITADO</th>
                                     <th>INICIO</th>
                                     <th>FIN</th>
                                     <th>CALIFICADO</th>

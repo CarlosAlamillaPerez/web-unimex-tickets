@@ -50,7 +50,7 @@ namespace Datos.Tickets
                             Cls_Tickets ticket = new Cls_Tickets
                             {
                                 Id = Convert.ToInt32(dr["Id"]),
-                                //Usuario = dr["Usuario"].ToString(),
+                                HasFile = Convert.ToInt32(dr["HasFile"]),
                                 Concepto = dr["Concepto"].ToString(),
                                 Incidencia = dr["Incidencia"].ToString(),
                                 Generado = dr["Generado"].ToString(),
@@ -58,7 +58,8 @@ namespace Datos.Tickets
                                 Fin = dr["Fin"].ToString(),
                                 Calificado = dr["Calificado"].ToString(),
                                 AtencionTicket = dr["AtencionTicket"].ToString(),
-                                Calificacion = dr["Calificacion"].ToString()
+                                Calificacion = dr["Calificacion"].ToString(),
+                                Status = dr["Status"].ToString()
                             };
                             lista.Add(ticket);
                         }
@@ -299,7 +300,7 @@ namespace Datos.Tickets
             {
                 using (cadenaConexion)
                 {
-                    using (SqlCommand cmd = new SqlCommand("sp_Tickets_Metodo_Obtener_Historial", cadenaConexion))
+                    using (SqlCommand cmd = new SqlCommand("sp_Tickets_Btn_Informacion", cadenaConexion))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id_ticket", id_ticket);
@@ -317,7 +318,7 @@ namespace Datos.Tickets
                                     Concepto = reader["Concepto"].ToString(),
                                     FechaIniciado = reader["FechaIniciado"].ToString(),
                                     Usuario = reader["Usuario"].ToString(),
-                                    FechaProcesso = reader["FechaProcesso"].ToString(),
+                                    FechaProceso = reader["FechaProceso"].ToString(),
                                     UsuarioAtiende = reader["UsuarioAtiende"].ToString(),
                                     FechaAtendido = reader["FechaAtendido"].ToString(),
                                     Observaciones = reader["Observaciones"].ToString(),
