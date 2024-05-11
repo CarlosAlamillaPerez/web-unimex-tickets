@@ -199,16 +199,6 @@ input[type='file'] {
     color: #d46666;
 }
 
-/*Modal Informacion*/
-/*.md-inf-contenedor {
-    display: flex;
-    justify-content: center;
-}*/
-
-/*.md-inf-table {
-    border: 1px;
-    width: 100%;
-}*/
 /*////////////////////////////// TABLA-SQL //////////////////////////////*/
 
 
@@ -220,3 +210,26 @@ input[type='file'] {
 }
 /*////////////////////////////// ALERTAS //////////////////////////////*/
 
+.swal2-popup {
+    min-width: 30em;
+    width: auto !important;
+}
+
+    .swal2-popup .table-striped:nth-of-type(2) td {
+        max-width: 300px;
+        overflow-y: auto;
+        text-align: justify;
+        text-align: center;
+    }
+    .swal2-popup .table-striped:first-of-type td,
+    .swal2-popup .table-striped:last-of-type td {
+        font-weight: bold;
+    }
+.swal2-close {
+    color: red;
+    font-size: 40px;
+}
+    .swal2-close:focus {
+        outline: none;
+        box-shadow: inset 0 0 0 0px rgba(255, 255, 255, .5);
+    }

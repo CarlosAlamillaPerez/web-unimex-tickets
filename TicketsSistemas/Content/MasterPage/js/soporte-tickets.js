@@ -89,7 +89,16 @@ new DataTable('#TicketsTable', {
             render: function (data, type, row, meta) {
                 return '<button class="btn-eliminar btn-table btn-table-general" data-id="' + row.Id + '" title="ELIMINAR"><i class="fa-solid fa-trash-can table-icon"></i></button>'
             }
-        }
+        },
+        {
+            title: '',
+            data: null,
+            orderable: false,
+            searchable: false,
+            render: function (data, type, row, meta) {
+                return '<button class="btn-success btn-table btn-table-success" data-id="' + row.Id + '" title="CALIFICAR ATENCIÓN"><i class="fa-solid fa-circle-check table-icon"></i></button>';
+            }
+        },
     ],
     language: {
         processing: "Procesando...",
@@ -101,7 +110,7 @@ new DataTable('#TicketsTable', {
         infoPostFix: "",
         loadingRecords: "Cargando...",
         zeroRecords: "No se encontraron resultados",
-        emptyTable: "No se ha generado ningún ticket.",
+        emptyTable: "No se ha generado ninguna solicitud.",
         paginate: {
             first: '<i class="fa-solid fa-angles-left"></i>',
             previous: '<i class="fa-solid fa-angle-left"></i>',
@@ -193,7 +202,7 @@ new DataTable('#TicketsTable2', {
         infoPostFix: "",
         loadingRecords: "Cargando...",
         zeroRecords: "No se encontraron resultados",
-        emptyTable: "No hay tickets resueltos",
+        emptyTable: "No hay solicitudes resueltas.",
         paginate: {
             first: '<i class="fa-solid fa-angles-left"></i>',
             previous: '<i class="fa-solid fa-angle-left"></i>',
@@ -236,6 +245,7 @@ function alert_time(text, type) {
 $('#btnAgregarNuevoTicket').click(function (event) {
     event.preventDefault();
     var boton = $(this);
+    Swal.showLoading();
     boton.prop('disabled', true);
 
     var plantelId = $('[id$="ddlPlantel"]').val();
@@ -287,17 +297,20 @@ $('#btnAgregarNuevoTicket').click(function (event) {
                 dataType: 'json',
                 success: function (response) {
                     if (response.d.Success) {
-                        alert_general("Ticket Generado", response.d.Message, "success");
+                        Swal.hideLoading();
+                        alert_general("Nueva Solicitud", response.d.Message, "success");
                         $('#TicketsTable').DataTable().ajax.reload();
                         $('[id$="txtDetalle"]').val('');
                         $('[id$="fileUpEvidencia"]').val('');
                         $('#nombre_file').text('');
                     } else {
+                        Swal.hideLoading();
                         alert_general("Error", response.d.Message, "warning");
                     }
                     boton.prop('disabled', false);
                 },
                 error: function (xhr, status, error) {
+                    Swal.hideLoading();
                     alert_general("Error", "Error al generar el ticket", "error");
                     console.log('Error al generar el ticket: ' + error);
                     console.log('Respuesta del servidor: ' + xhr.responseText);
@@ -355,6 +368,7 @@ $('#TicketsTable').on('click', 'button.btn-descargar', async function (event) {
 $('#TicketsTable').on('click', 'button.btn-informacion', async function (event) {
     event.preventDefault();
     var id_ticket = $(this).data('id');
+    Swal.showLoading();
 
     $.ajax({
         type: 'POST',
@@ -363,48 +377,47 @@ $('#TicketsTable').on('click', 'button.btn-informacion', async function (event) 
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (response) {
-            const tablaHTML =`
-            <div>
-                <table border="0" style="width: 100%;">
-                    <thead>
-                        <tr>
-                            <th>Estatus</th>
-                            <th>Fecha</th>
-                            <th>Mensaje</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Fila 1, Col 1</td>
-                            <td>Fila 1, Col 2</td>
-                            <td>Fila 1, Col 3</td>
-                        </tr>
-                        <tr>
-                            <td>Fila 2, Col 1</td>
-                            <td>Fila 2, Col 2</td>
-                            <td>Fila 2, Col 3</td>
-                        </tr>
-                        <tr>
-                            <td>Fila 3, Col 1</td>
-                            <td>Fila 3, Col 2</td>
-                            <td>Fila 3, Col 3</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="1">Calificación: ####</td>
-                            <td colspan="2">Tiempo de respuesta:<br> 00 horas 00 minutos</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>`;
+            Swal.hideLoading();
+            const datos = response.d;
+
+            if (datos) {
+                // Inyectar los datos en el modal
+                $('#id_ticket').text(id_ticket);
+                $('#asistente').text(datos.Asistente);
+                $('#soporte').text(datos.Soporte);
+                $('#concepto').text(datos.Concepto);
+                $('#incidencia').text(datos.Incidencia);
+
+                // Limpiar la tabla de detalles
+                $('#tabla-detalle').empty();
+
+                // Construir las filas de la tabla de detalles
+                let filaIniciado = '<tr><th scope="row">1</th><td>' + datos.FechaIniciado + '</td><td>' + datos.Usuario + '</td><td></td><td>Iniciado</td></tr>';
+                let filaEnProceso = '<tr><th scope="row">2</th><td>' + datos.FechaProcesso + '</td><td>' + datos.UsuarioAtiende + '</td><td></td><td>En Proceso</td></tr>';
+                let filaAtendido = '<tr><th scope="row">3</th><td>' + datos.FechaAtendido + '</td><td>' + datos.UsuarioAtiende + '</td><td>' + datos.Observaciones + '</td><td>Atendido</td></tr>';
+                let filaCerrado = '<tr><th scope="row">4</th><td>' + datos.FechaCerrado + '</td><td>' + datos.Usuario + '</td><td>' + datos.ObsCerrado + '</td><td>Cerrado</td></tr>';
+
+                $('#tabla-detalle').append(filaIniciado, filaEnProceso, filaAtendido, filaCerrado);
+
+                $('#calificacion').text(datos.Calificacion);
+                $('#tiempo_respuesta').text(datos.TiempoRespuesta);
+
                 Swal.fire({
-                    title: 'Ticket #' + id_ticket,
-                    html: tablaHTML,
-                    confirmButtonText: 'Cerrar'
+                    title: $('#modal-titulo').html(),
+                    html: $('#modal-contenido').html(),
+                    showCloseButton: true,
+                    showCancelButton: false,
+                    showConfirmButton: false,
                 });
+            } else {
+                alert_general("Error", "No se encontraron datos para el ticket seleccionado", "error");
+            }
         },
         error: function (xhr, status, error) {
+            Swal.hideLoading();
+            console.log('Error al obtener datos del modal:', error);
+            console.log('Estado:', status);
+            console.log('Respuesta del servidor:', xhr.responseText);
             alert_general("Error", "Error inesperado con el Modal", "error");
         }
     });
@@ -467,57 +480,8 @@ $('#TicketsTable').on('click', 'button.btn-eliminar', async function (event) {
     }
 });
 
-/* ERROR */
-$('#TicketsTable2').on('click', 'button.btn-error', async function (event) {
-    event.preventDefault();
-    var id_ticket = $(this).data('id');
-
-    Swal.fire({
-        title: "¿No se encontró solución?",
-        input: "textarea",
-        inputPlaceholder: "Detalla el problema que presentas...",
-        icon: "question",
-        inputAttributes: {
-            autocapitalize: "off"
-        },
-        showCancelButton: true,
-        confirmButtonText: "Enviar",
-        showLoaderOnConfirm: true,
-        preConfirm: async (mensaje) => {
-            if (mensaje == "") {
-                Swal.showValidationMessage(`Describe tu problema &nbsp; <i class="fa-regular fa-face-sad-cry"></i>`);
-                return;
-            }
-            try {
-                await $.ajax({
-                    type: 'POST',
-                    url: 'ControlTicketsSoporte.aspx/Btn_DataTable_Calificacion_Error',
-                    data: JSON.stringify({ id_ticket: id_ticket, mensaje: mensaje }),
-                    contentType: 'application/json; charset=utf-8',
-                    dataType: 'json',
-                    success: function () {
-                        $('#TicketsTable').DataTable().ajax.reload();
-                        $('#TicketsTable2').DataTable().ajax.reload();
-                    },
-                    error: function (xhr, status, error) {
-                        console.error(xhr.responseText);
-                        Swal.showValidationMessage(`Error al enviar: ${error}`);
-                    }
-                });
-            } catch (error) {
-                Swal.showValidationMessage(`Error al enviar: ${error}`);
-            }
-        },
-        allowOutsideClick: () => !Swal.isLoading()
-    }).then((result) => {
-        if (result.isConfirmed) {
-            alert_time("Mensaje enviado", "success");
-        }
-    });
-});
-
 /* SUCCESS */
-$('#TicketsTable2').on('click', 'button.btn-success', async function (event) {
+$('#TicketsTable').on('click', 'button.btn-success', async function (event) {
     event.preventDefault();
     var id_ticket = $(this).data('id');
     Swal.fire({
@@ -573,7 +537,96 @@ $('#TicketsTable2').on('click', 'button.btn-success', async function (event) {
     });
 });
 
+/* ERROR (ACTUALMENTE NO SE USA) */
+$('#TicketsTable2').on('click', 'button.btn-error', async function (event) {
+    event.preventDefault();
+    var id_ticket = $(this).data('id');
+
+    Swal.fire({
+        title: "¿No se encontró solución?",
+        input: "textarea",
+        inputPlaceholder: "Detalla el problema que presentas...",
+        icon: "question",
+        inputAttributes: {
+            autocapitalize: "off"
+        },
+        showCancelButton: true,
+        confirmButtonText: "Enviar",
+        showLoaderOnConfirm: true,
+        preConfirm: async (mensaje) => {
+            if (mensaje == "") {
+                Swal.showValidationMessage(`Describe tu problema &nbsp; <i class="fa-regular fa-face-sad-cry"></i>`);
+                return;
+            }
+            try {
+                await $.ajax({
+                    type: 'POST',
+                    url: 'ControlTicketsSoporte.aspx/Btn_DataTable_Calificacion_Error',
+                    data: JSON.stringify({ id_ticket: id_ticket, mensaje: mensaje }),
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    success: function () {
+                        $('#TicketsTable').DataTable().ajax.reload();
+                        $('#TicketsTable2').DataTable().ajax.reload();
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText);
+                        Swal.showValidationMessage(`Error al enviar: ${error}`);
+                    }
+                });
+            } catch (error) {
+                Swal.showValidationMessage(`Error al enviar: ${error}`);
+            }
+        },
+        allowOutsideClick: () => !Swal.isLoading()
+    }).then((result) => {
+        if (result.isConfirmed) {
+            alert_time("Mensaje enviado", "success");
+        }
+    });
+});
+
+
 //////// FIN BOTONES DE TABLA  //////
 
 ////////////////////////////////////////////////  FIN ALERTAS ///////////////////////////////////////////////////////////////////////////
 
+function Metodo_Obtener_ModalDetalle(id_ticket) {
+    // Genera el HTML de la tabla usando el ID del ticket
+    const tablaHTML = `
+        <div>
+            <table border="0" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th>Estatus</th>
+                        <th>Fecha</th>
+                        <th>Mensaje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fila 1, Col 1</td>
+                        <td>Fila 1, Col 2</td>
+                        <td>Fila 1, Col 3</td>
+                    </tr>
+                    <tr>
+                        <td>Fila 2, Col 1</td>
+                        <td>Fila 2, Col 2</td>
+                        <td>Fila 2, Col 3</td>
+                    </tr>
+                    <tr>
+                        <td>Fila 3, Col 1</td>
+                        <td>Fila 3, Col 2</td>
+                        <td>Fila 3, Col 3</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="1">Calificación: ####</td>
+                        <td colspan="2">Tiempo de respuesta:<br> 00 horas 00 minutos</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>`;
+    return tablaHTML;
+}

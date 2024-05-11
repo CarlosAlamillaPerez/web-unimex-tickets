@@ -291,6 +291,56 @@ namespace Datos.Tickets
                 error.Dispose();
             }
         }
+        public List<Cls_Tickets> Btn_DataTable_Informacion(int id_ticket)
+        {
+            List<Cls_Tickets> historial = new List<Cls_Tickets>();
+
+            try
+            {
+                using (cadenaConexion)
+                {
+                    using (SqlCommand cmd = new SqlCommand("sp_Tickets_Metodo_Obtener_Historial", cadenaConexion))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_ticket", id_ticket);
+
+                        cadenaConexion.Open();
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Cls_Tickets ticket = new Cls_Tickets
+                                {
+                                    Asistente = reader["Asistente"].ToString(),
+                                    Soporte = reader["Soporte"].ToString(),
+                                    Concepto = reader["Concepto"].ToString(),
+                                    FechaIniciado = reader["FechaIniciado"].ToString(),
+                                    Usuario = reader["Usuario"].ToString(),
+                                    FechaProcesso = reader["FechaProcesso"].ToString(),
+                                    UsuarioAtiende = reader["UsuarioAtiende"].ToString(),
+                                    FechaAtendido = reader["FechaAtendido"].ToString(),
+                                    Observaciones = reader["Observaciones"].ToString(),
+                                    FechaCerrado = reader["FechaCerrado"].ToString(),
+                                    ObsCerrado = reader["ObsCerrado"].ToString(),
+                                    Calificacion = reader["Calificacion"].ToString(),
+                                    Incidencia = reader["Incidencia"].ToString(),
+                                    TiempoRespuesta = reader["TiempoRespuesta"].ToString()
+                                };
+
+                                historial.Add(ticket);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return historial;
+        }
 
         public int Metodo_Obtener_TotalDataTable(string filtro,int id)
         {

@@ -216,12 +216,12 @@ namespace TicketsSistemas.Presentacion
                     int id_usuario = Convert.ToInt32(HttpContext.Current.Session["ClaveUsuario"]);
                     new Negocio_Tickets().Metodo_EnviarCorreos_TicketGenerado(id_ticket, nombre_usuario, incidencia, id_usuario);
                     response.Success = true;
-                    response.Message = "Te notificaremos por correo cuando tu ticket se encuentre en proceso de atención.";
+                    response.Message = "Te avisaremos por correo cuando iniciemos tu solicitud";
                 }
                 else
                 {
                     response.Success = false;
-                    response.Message = "Necesitas describir el problema que presentas.";
+                    response.Message = "Necesitas describir el problema que presentas";
                 }
             }
             catch (Exception ex)
@@ -267,9 +267,25 @@ namespace TicketsSistemas.Presentacion
         }
 
         [WebMethod]
-        public static void Btn_DataTable_Informacion(int id_ticket)
+        public static Cls_Tickets Btn_DataTable_Informacion(int id_ticket)
         {
-            return;
+            try
+            {
+                List<Cls_Tickets> historial = new Negocio_Tickets().Btn_DataTable_Informacion(id_ticket);
+
+                if (historial.Count > 0)
+                {
+                    return historial[0];
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         [WebMethod]
@@ -280,13 +296,13 @@ namespace TicketsSistemas.Presentacion
             if (File.Exists(rutaArchivo))
             {
                 response.Success = true;
-                response.Message = "Ticket & Evidencia Eliminados";
+                response.Message = "Solicitud & Evidencia Eliminados";
                 File.Delete(rutaArchivo);
             }
             else
             {
                 response.Success = false;
-                response.Message = "Ticket Eliminado";
+                response.Message = "Solicitud Eliminada";
             }
             new Negocio_Tickets().Btn_DataTable_Eliminar(id_ticket);
             return response;

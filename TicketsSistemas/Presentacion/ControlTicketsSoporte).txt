@@ -13,7 +13,7 @@
         <div class="container mt-2">
             <div class="row">
                 <div class="col-3 new-ticket">
-                    <h2 class="new-ticket-title">Nuevo Ticket</h2>
+                    <h2 class="new-ticket-title">Nueva Solicitud</h2>
                     <div class="row">
                         <div class="form-group col-lg-12">
                             <asp:Label ID="lblPlantel" runat="server" Text="Plantel" class="new-ticket-subtitle "></asp:Label>
@@ -49,8 +49,8 @@
                 </div>
                 <div class="col-9">
                     <div class="row btn-title">
-                        <button class="btn-title-item" id="ticket-inicio" data-target="ticket-inicio">Historial de Ticket</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button class="btn-title-item" id="ticket-fin" data-target="ticket-fin">Calificar Asistente</button>
+                        <button class="btn-title-item" id="ticket-inicio" data-target="ticket-inicio">Historial de Solicitudes</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <%--<button class="btn-title-item" id="ticket-fin" data-target="ticket-fin">Calificar Asistente</button>--%>
                     </div>
                     <div id="buttons_container"></div>
                     <div id="ticket-history" class="display" style="width: 100%">
@@ -73,7 +73,7 @@
                             <tfoot>
                             </tfoot>
                         </table>
-                    </div>                    
+                    </div>
                     <div id="ticket-calificacion" class="display" style="display: none;">
                         <table id="TicketsTable2" class="display TicketsTable" style="width: 100%">
                             <thead>
@@ -97,5 +97,88 @@
                 </div>
             </div>
         </div>
+
+        <template id="modal-informacion">
+            <swal-title>
+                Historial de Solicitud #${id_ticket}
+            </swal-title>
+            <swal-html>
+                <div class="table-responsive" >
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Asistente:<br />
+                                    ${asistente}
+                                </td>
+                                <td>
+                                    Soporte:<br />
+                                    ${soporte}
+                                </td>
+                                <td>
+                                    Concepto:<br />
+                                    ${concepto}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Usuario</th>
+                                <th scope="col">Mensaje</th>
+                                <th scope="col">Estatus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>${fecha_iniciado}</td>
+                                <td>${usuario}</td>
+                                <td></td>
+                                <td>Iniciado</td>
+                            </tr>
+                            <tr>
+                                 <th scope="row">2</th>
+                                <td>${fecha_proceso}</td>
+                                <td>${usuario_atiende}</td>
+                                <td></td>
+                                <td>En Proceso</td>
+                            </tr>
+                            <tr>
+                                 <th scope="row">3</th>
+                                <td>${fecha_atendido}</td>
+                                <td>${usuario_atiende}</td>
+                                <td>${observaciones}</td>
+                                <td>Atendido</td>
+                            </tr>
+                            <tr>
+                                 <th scope="row">3</th>
+                                <td>${fecha_cerrado}</td>
+                                <td>${usuario}</td>
+                                <td>${obs_cerrado}</td>
+                                <td>CERRADO</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Calificación:<br />
+                                    ${calificacion}
+                                </td>
+                                <td>
+                                    Tiempo de solución:<br />
+                                    ${tiempo_respuesta}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </swal-html>
+        </template>
     </contenttemplate>
 </asp:Content>

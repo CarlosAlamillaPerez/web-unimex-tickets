@@ -47,12 +47,24 @@ namespace Negocio.Tickets
             }
             catch (Exception ex) { throw ex; }
         }
+        public List<Cls_Tickets> Btn_DataTable_Informacion(int id_ticket)
+        {
+            try
+            {
+                List<Cls_Tickets> historial = new Datos_Tickets().Btn_DataTable_Informacion(id_ticket);
+                return historial;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-        public int Metodo_Obtener_TotalDataTable(string filtro,int id)
+        public int Metodo_Obtener_TotalDataTable(string filtro, int id)
         {
             return new Datos_Tickets().Metodo_Obtener_TotalDataTable(filtro, id);
         }
-        public int Metodo_Obtener_TotalDataTable2(string filtro,int id)
+        public int Metodo_Obtener_TotalDataTable2(string filtro, int id)
         {
             return new Datos_Tickets().Metodo_Obtener_TotalDataTable2(filtro, id);
         }
@@ -84,7 +96,7 @@ namespace Negocio.Tickets
         {
             try
             {
-                return (new Datos_Tickets()).Btn_Agregar(id_empresa, id_concepto, detalle,clave_usuario);
+                return (new Datos_Tickets()).Btn_Agregar(id_empresa, id_concepto, detalle, clave_usuario);
             }
             catch (Exception ex) { throw ex; }
         }
