@@ -1,72 +1,84 @@
-﻿using Entidades;
+﻿using AjaxControlToolkit.HtmlEditor.ToolbarButtons;
+using Entidades;
 using Negocio;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using TicketsSistemas.Presentacion;
-
+using System.Web.Services;
 
 namespace TicketsSistemas
 {
     public partial class Login : System.Web.UI.Page
     {
-        Infraestructura.FactoryConection _FactoryConection = new Infraestructura.FactoryConection();
-
         protected void Page_Load(object sender, EventArgs e)
         {
         }
-
-        /// <summary>
-        /// Evento Click del Usuario
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void submit_Click(object sender, EventArgs e)
+        public class JsonTicketResponse
         {
+            public bool Success { get; set; }
+            public string Message { get; set; }
+            public string RedirectUrl { get; set; }
+        }
+
+        [WebMethod]
+        public static JsonTicketResponse Btn_Enviar_Login(string user, string pass)
+        {
+            JsonTicketResponse response = new JsonTicketResponse();
             try
             {
-                if (txtUserName.Text != "" || txtPassword.Text != "")
+                if (!string.IsNullOrEmpty(user))
                 {
-                    ClsDesEncripta oDesEnc = new ClsDesEncripta();
-                    string pass = oDesEnc.Encripta(txtPassword.Text.Trim());
-                    if (ValidaAcceso(txtUserName.Text.Trim(),pass))
+                    if (!string.IsNullOrEmpty(pass))
                     {
-                        Response.Redirect(@"~\Presentacion\ControlTicketsSoporte.aspx", false);
-                        //Response.Redirect(@"~\Presentacion\ControlPrueba.aspx", false);
+
+                        
+                        Login login = new Login();
+                        if (login.ValidaAcceso(user, pass))
+                        {
+                            string usuario = (string)HttpContext.Current.Session["Usuario"];
+                            response.Success = true;
+                            response.Message = "Bienvenido " + usuario;
+                            response.RedirectUrl = "Presentacion/ControlTicketsSoporte.aspx";
+                        }
+                        else
+                        {
+                            response.Success = false;
+                            response.Message = "Usuario o contraseña incorrectos";
+                        }
                     }
                     else
                     {
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "", "window.alert('" + "Error al iniciar sesión. Datos incorrectos" + "');", true);
-                        //ControlTicketsSoporte.alert_general(this, "Error", "Datos Incorrectos", "error");
+                        response.Success = false;
+                        response.Message = "Escribe tu contraseña";
                     }
                 }
                 else
                 {
-                    txtUserName.Focus();
-                    txtPassword.Focus();
+                    response.Success = false;
+                    response.Message = "Escribe tu usuario";
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                ControlTicketsSoporte.alert_general(this, "Error", "Este usuario no tiene un nivel de acceso", "error");
+                response.Success = false;
+                response.Message = $"Error inesperado: '{ex.Message}'";
             }
+            return response;
         }
 
-
-        public bool ValidaAcceso(string Usuario, string Password)
+        public bool ValidaAcceso(string _user, string Password)
         {
-            Cls_Usuario user = new Cls_Usuario();
-            user = (new Home_Neg()).ValidaAcceso(Usuario, Password, _FactoryConection.GeneraConexion(7));
-            if (user != null)
+            Cls_Usuario User = new Cls_Usuario();
+            ClsDesEncripta oDesEnc = new ClsDesEncripta();
+
+            string _pass = oDesEnc.Encripta(Password);
+            User = new Home_Neg().ValidaAcceso(_user, _pass, new Infraestructura.FactoryConection().GeneraConexion(7));
+            if (User != null)
             {
-                Session["ClaveUsuario"] = user.ClaveUsuario;
-                Session["Usuario"] = user.Usuario;
-                Session["Nombre"] = user.Nombre;
-                Session["Ap_paterno"] = user.ap_paterno;
-                Session["Ap_materno"] = user.ap_materno;
+                HttpContext.Current.Session["ClaveUsuario"] = User.ClaveUsuario;
+                HttpContext.Current.Session["Usuario"] = User.Usuario;
+                HttpContext.Current.Session["Nombre"] = User.Nombre;
+                HttpContext.Current.Session["Ap_paterno"] = User.ap_paterno;
+                HttpContext.Current.Session["Ap_materno"] = User.ap_materno;
                 return true;
             }
             else

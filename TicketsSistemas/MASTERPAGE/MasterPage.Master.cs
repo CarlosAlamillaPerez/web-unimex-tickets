@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace TicketsSistemas.MASTERPAGE
@@ -21,7 +17,7 @@ namespace TicketsSistemas.MASTERPAGE
             }
             if (!IsPostBack)
             {
-                lblCerrarSesion.Text = "Bienvenido " + Session["Nombre"].ToString() + " " + Session["Ap_paterno"] + " " + Session["Ap_materno"];
+                lblCerrarSesion.Text = "Bienvenido " + Session["Nombre"] + " " + Session["Ap_paterno"] + " " + Session["Ap_materno"];
             }
         }
     }

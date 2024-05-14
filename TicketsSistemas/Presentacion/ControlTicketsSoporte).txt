@@ -60,7 +60,7 @@
                                     <th>ID</th>
                                     <th>CONCEPTO</th>
                                     <th>INCIDENCIA</th>
-                                    <th>GENERADO</th>
+                                    <th>SOLICITADO</th>
                                     <th>INICIO</th>
                                     <th>FIN</th>
                                     <th>CALIFICADO</th>
@@ -98,27 +98,24 @@
             </div>
         </div>
 
-        <template id="modal-informacion">
-            <swal-title>
-                Historial de Solicitud #${id_ticket}
-            </swal-title>
-            <swal-html>
-                <div class="table-responsive" >
+
+        <div id="modal-informacion" style="display: none;">
+            <div id="modal-titulo">Solicitud #<span id="id_ticket"></span></div>
+            <div id="modal-contenido">
+                <div class="table-responsive">
                     <table class="table table-striped">
                         <tbody>
                             <tr>
-                                <td>
-                                    Asistente:<br />
-                                    ${asistente}
-                                </td>
-                                <td>
-                                    Soporte:<br />
-                                    ${soporte}
-                                </td>
-                                <td>
-                                    Concepto:<br />
-                                    ${concepto}
-                                </td>
+                                <td>Asistente:<br /><span id="asistente"></span></td>
+                                <td>Soporte:<br /><span id="soporte"></span></td>
+                                <td>Concepto:<br /><span id="concepto"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td><span id="incidencia"></span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -132,53 +129,18 @@
                                 <th scope="col">Estatus</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>${fecha_iniciado}</td>
-                                <td>${usuario}</td>
-                                <td></td>
-                                <td>Iniciado</td>
-                            </tr>
-                            <tr>
-                                 <th scope="row">2</th>
-                                <td>${fecha_proceso}</td>
-                                <td>${usuario_atiende}</td>
-                                <td></td>
-                                <td>En Proceso</td>
-                            </tr>
-                            <tr>
-                                 <th scope="row">3</th>
-                                <td>${fecha_atendido}</td>
-                                <td>${usuario_atiende}</td>
-                                <td>${observaciones}</td>
-                                <td>Atendido</td>
-                            </tr>
-                            <tr>
-                                 <th scope="row">3</th>
-                                <td>${fecha_cerrado}</td>
-                                <td>${usuario}</td>
-                                <td>${obs_cerrado}</td>
-                                <td>CERRADO</td>
-                            </tr>
-                        </tbody>
+                        <tbody id="tabla-detalle"></tbody>
                     </table>
                     <table class="table table-striped">
                         <tbody>
                             <tr>
-                                <td>
-                                    Calificación:<br />
-                                    ${calificacion}
-                                </td>
-                                <td>
-                                    Tiempo de solución:<br />
-                                    ${tiempo_respuesta}
-                                </td>
+                                <td>Calificación:<br /><span id="calificacion"></span></td>
+                                <td>Tiempo de solución:<br /><span id="tiempo_respuesta"></span>&nbsp;Hrs.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </swal-html>
-        </template>
+            </div>
+        </div>
     </contenttemplate>
 </asp:Content>

@@ -65,9 +65,9 @@ namespace Datos
                     con.Open();
                     using (DbDataReader dr = cmd.ExecuteReader())
                     {
-                        while (dr.Read())
+                        if (dr.Read())
                         {
-                            Loginuser = (new Cls_Usuario()
+                            Loginuser = new Cls_Usuario()
                             {
                                 ClaveUsuario = (decimal)dr["clave_usuario"],
                                 Usuario = (string)dr["usuario"],
@@ -76,10 +76,8 @@ namespace Datos
                                 ap_materno = (string)dr["ap_materno"],
                                 Nombre = (string)dr["nombre"],
                                 Estatus = (bool)dr["estatus"]
-                            });
-
+                            };
                         }
-
                     }
                 }
             }

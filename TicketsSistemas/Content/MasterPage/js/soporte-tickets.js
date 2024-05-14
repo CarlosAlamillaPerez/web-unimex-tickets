@@ -294,7 +294,7 @@ function alert_time(text, type) {
 /* FIN ALERTA GENERAL */
 
 
-/* INICIO BOTON DE AGREGAR TICKET*/
+/* AGREGAR TICKET*/
 $('#btnAgregarNuevoTicket').click(function (event) {
     event.preventDefault();
     var boton = $(this);
@@ -373,8 +373,7 @@ $('#btnAgregarNuevoTicket').click(function (event) {
         }
     }
 });
-
-/*  FIN   BOTON DE AGREGAR TICKET */
+/*  FIN AGREGAR TICKET */
 
 
 ////////  BOTONES DE TABLA  ////////

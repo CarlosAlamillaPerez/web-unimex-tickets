@@ -103,11 +103,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\MasterPage\css\soporte-tickets.css" />
+    <Content Include="Content\MasterPage\js\login-tickets.js" />
     <Content Include="Imagenes\Atrás.png" />
     <Content Include="Imagenes\CargarArchivo.png" />
     <Content Include="Imagenes\delete-row.png" />
     <Content Include="Imagenes\descarga.png" />
     <Content Include="Imagenes\Detalle.png" />
+    <Content Include="Logout.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -136,28 +138,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\cssLogin\css\all.min.css" />
-    <Content Include="Content\cssLogin\css\bootstrap.min.css" />
-    <Content Include="Content\cssLogin\css\Login.css" />
-    <Content Include="Content\cssLogin\css\main.css" />
-    <Content Include="Content\cssLogin\css\MasterCss.css" />
-    <Content Include="Content\cssLogin\css\sb-admin-2.min.css" />
-    <Content Include="Content\cssLogin\css\util.css" />
-    <Content Include="Content\cssLogin\scripts\ai.0.22.9-build00167.js" />
-    <Content Include="Content\cssLogin\scripts\ai.0.22.9-build00167.min.js" />
-    <Content Include="Content\cssLogin\scripts\anime.js" />
-    <Content Include="Content\cssLogin\scripts\bootstrap.bundle.min.js" />
-    <Content Include="Content\cssLogin\scripts\bootstrap.min.js" />
-    <Content Include="Content\cssLogin\scripts\chart-area-demo.js" />
-    <Content Include="Content\cssLogin\scripts\chart-pie-demo.js" />
-    <Content Include="Content\cssLogin\scripts\Chart.min.js" />
-    <Content Include="Content\cssLogin\scripts\jquery.easing.min.js" />
-    <Content Include="Content\cssLogin\scripts\jquery.min.js" />
-    <Content Include="Content\cssLogin\scripts\MasterJs.js" />
-    <Content Include="Content\cssLogin\scripts\sb-admin-2.min.js" />
+    <Content Include="Content\MasterPage\css\login-tickets.css" />
     <Content Include="Content\MasterPage\css\bootstrap.min.css" />
-    <Content Include="Content\MasterPage\css\fontawesome.min.css" />
-    <Content Include="Content\MasterPage\css\master-page.css" />
+    <Content Include="Content\MasterPage\css\master-tickets.css" />
     <Content Include="Content\MasterPage\jquery-ui-datepicker\AUTHORS.txt" />
     <Content Include="Content\MasterPage\jquery-ui-datepicker\external\jquery\jquery.js" />
     <Content Include="Content\MasterPage\jquery-ui-datepicker\index.html" />
@@ -171,8 +154,6 @@
     <Content Include="Content\MasterPage\jquery-ui-datepicker\jquery-ui.theme.min.css" />
     <Content Include="Content\MasterPage\jquery-ui-datepicker\LICENSE.txt" />
     <Content Include="Content\MasterPage\js\bootstrap.min.js" />
-    <Content Include="Content\MasterPage\js\Chart.min.js" />
-    <Content Include="Content\MasterPage\js\moment.min.js" />
     <Content Include="Content\MasterPage\js\soporte-tickets.js" />
     <Content Include="Content\MasterPage\webfonts\fa-brands-400.svg" />
     <Content Include="Content\MasterPage\webfonts\fa-regular-400.svg" />
@@ -217,7 +198,6 @@
     <Content Include="Imagenes\select-row.png" />
     <Content Include="Imagenes\User.png" />
     <Content Include="Login.aspx" />
-    <Content Include="MensajeError.aspx" />
     <Content Include="Presentacion\ControlTicketsSoporte.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
@@ -237,19 +217,19 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MASTERPAGE\MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MASTERPAGE\MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="MensajeError.aspx.cs">
-      <DependentUpon>MensajeError.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MensajeError.aspx.designer.cs">
-      <DependentUpon>MensajeError.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\ControlTicketsSoporte.aspx.cs">
       <DependentUpon>ControlTicketsSoporte.aspx</DependentUpon>
