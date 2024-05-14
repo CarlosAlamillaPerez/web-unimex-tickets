@@ -445,7 +445,7 @@ $('#TicketsTable').on('click', 'button.btn-informacion', async function (event) 
 
                 // Construir las filas de la tabla de detalles
                 let filaIniciado = '<tr><th scope="row">1</th><td>' + datos.FechaIniciado + '</td><td>' + datos.Usuario + '</td><td></td><td>Iniciado</td></tr>';
-                let filaEnProceso = '<tr><th scope="row">2</th><td>' + datos.FechaProcesso + '</td><td>' + datos.UsuarioAtiende + '</td><td></td><td>En Proceso</td></tr>';
+                let filaEnProceso = '<tr><th scope="row">2</th><td>' + datos.FechaProceso + '</td><td>' + datos.UsuarioAtiende + '</td><td></td><td>En Proceso</td></tr>';
                 let filaAtendido = '<tr><th scope="row">3</th><td>' + datos.FechaAtendido + '</td><td>' + datos.UsuarioAtiende + '</td><td>' + datos.Observaciones + '</td><td>Atendido</td></tr>';
                 let filaCerrado = '<tr><th scope="row">4</th><td>' + datos.FechaCerrado + '</td><td>' + datos.Usuario + '</td><td>' + datos.ObsCerrado + '</td><td>Cerrado</td></tr>';
 
@@ -642,3 +642,7 @@ $('#TicketsTable2').on('click', 'button.btn-error', async function (event) {
 //////// FIN BOTONES DE TABLA  //////
 
 ////////////////////////////////////////////////  FIN ALERTAS ///////////////////////////////////////////////////////////////////////////
+function mostrarNombreArchivo(input) {
+    var nombreArchivo = input.value.split("\\").pop();
+    document.getElementById("nombre_file").innerHTML = nombreArchivo;
+}

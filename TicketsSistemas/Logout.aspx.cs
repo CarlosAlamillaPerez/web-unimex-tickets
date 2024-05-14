@@ -16,6 +16,8 @@ namespace TicketsSistemas
 
             // Invalida la sesión actual
             Session.Abandon();
+            Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
+            Response.Cookies["ASP.NET_SessionId"].Expires = DateTime.Now.AddDays(-1);
 
             // Redirige al usuario a la página de login
             Response.Redirect("~/Login.aspx");

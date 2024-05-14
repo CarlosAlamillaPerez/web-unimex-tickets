@@ -155,6 +155,8 @@ input[type='file'] {
     cursor: pointer;
 }
 
+
+/*// TABLA-BOTONES //*/
 .btn-table-general i {
     color: #007bff;
 }
@@ -170,6 +172,7 @@ input[type='file'] {
 .btn-table-success:hover {
     background-color: transparent;
 }
+
 .btn-success:not(:disabled):not(.disabled):active {
     background-color: transparent;
 }
@@ -183,9 +186,9 @@ input[type='file'] {
     color: #8cd762;
 }
 
-    .btn-table-success:hover i {
-        color: #84af6c;
-    }
+.btn-table-success:hover i {
+    color: #84af6c;
+}
 
 .btn-table-error:focus {
     outline: none;
@@ -198,17 +201,16 @@ input[type='file'] {
 .btn-table-error:hover i {
     color: #d46666;
 }
+/*// TABLA-BOTONES //*/
+
 
 /*////////////////////////////// TABLA-SQL //////////////////////////////*/
 
 
-
-/*////////////////////////////// ALERTAS //////////////////////////////*/
-
+/*////////////////////////// MODAL INFORMACION ///////////////////////*/
 .swal2-confirm, .swal2-cancel {
     margin-right: 10px; /* Ajusta el margen entre los botones */
 }
-/*////////////////////////////// ALERTAS //////////////////////////////*/
 
 .swal2-popup {
     min-width: 30em;
@@ -221,15 +223,23 @@ input[type='file'] {
         text-align: justify;
         text-align: center;
     }
+
     .swal2-popup .table-striped:first-of-type td,
     .swal2-popup .table-striped:last-of-type td {
         font-weight: bold;
     }
+
 .swal2-close {
     color: red;
     font-size: 40px;
 }
+
     .swal2-close:focus {
         outline: none;
         box-shadow: inset 0 0 0 0px rgba(255, 255, 255, .5);
     }
+
+.table td, table th {
+    max-width: 450px;
+}
+/*////////////////////////// MODAL INFORMACION ///////////////////////*/

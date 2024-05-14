@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 using System.Web.UI.WebControls;
 
 namespace TicketsSistemas.MASTERPAGE
@@ -14,10 +15,6 @@ namespace TicketsSistemas.MASTERPAGE
             if (Session["Usuario"] == null)
             {
                 Response.Redirect("~/Home.aspx");
-            }
-            if (!IsPostBack)
-            {
-                lblCerrarSesion.Text = "Bienvenido " + Session["Nombre"] + " " + Session["Ap_paterno"] + " " + Session["Ap_materno"];
             }
         }
     }

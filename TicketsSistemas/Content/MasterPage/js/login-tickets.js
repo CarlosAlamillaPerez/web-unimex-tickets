@@ -19,7 +19,7 @@
                     alert_mini(response.d.Message, "success");
                     setTimeout(function () {
                         window.location.href = response.d.RedirectUrl;
-                    }, 1000);
+                    }, 1200);
                 } else {
                     alert_mini(response.d.Message, "error");
                 }
@@ -38,7 +38,7 @@ function alert_mini(text, type) {
         toast: true,
         position: "top-end",
         showConfirmButton: false,
-        timer: 1000,
+        timer: 1350,
         timerProgressBar: true,
         didOpen: (toast) => {
             toast.onmouseenter = Swal.stopTimer;

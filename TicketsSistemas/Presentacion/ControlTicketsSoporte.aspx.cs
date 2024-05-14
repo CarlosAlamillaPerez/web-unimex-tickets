@@ -24,25 +24,32 @@ namespace TicketsSistemas.Presentacion
         #region [ Carga Pagina ]
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Cookies["Usuario"] != null)
-            {
-                Response.Cookies["Usuario"].Expires = DateTime.Now.AddDays(-1);
-            }
             if (Session["Usuario"] == null)
             {
                 Response.Redirect("~/Login.aspx");
             }
+            if (Request.Cookies["Usuario"] != null)
+            {
+                Response.Cookies["Usuario"].Expires = DateTime.Now.AddDays(-1);
+            }
 
             if (!IsPostBack)
             {
+                if (Session["Usuario"] == null)
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
                 Metodo_User_Access();
                 Metodo_DDL_Plantel();
                 Metodo_DDL_Soporte();
                 Metodo_DDL_Concepto();
 
                 Session.Timeout = 1440;
-                this.Page.Form.Enctype = "multipart/form-data";
+                //this.Page.Form.Enctype = "multipart/form-data";
             }
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Cache.SetExpires(DateTime.UtcNow.AddHours(-1));
+            Response.Cache.SetNoStore();
 
         }
         #endregion

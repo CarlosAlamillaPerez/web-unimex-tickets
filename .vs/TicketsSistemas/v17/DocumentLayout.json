@@ -3,36 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|c:\\users\\desarrollador1\\desktop\\ticketssistemas\\ticketssistemas\\presentacion\\controlticketssoporte.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|solutionrelative:ticketssistemas\\presentacion\\controlticketssoporte.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|c:\\users\\desarrollador1\\desktop\\ticketssistemas\\ticketssistemas\\masterpage\\masterpage.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|solutionrelative:ticketssistemas\\masterpage\\masterpage.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|c:\\users\\desarrollador1\\desktop\\ticketssistemas\\ticketssistemas\\presentacion\\controlticketssoporte.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|solutionrelative:ticketssistemas\\presentacion\\controlticketssoporte.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|c:\\users\\desarrollador1\\desktop\\ticketssistemas\\ticketssistemas\\masterpage\\masterpage.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|solutionrelative:ticketssistemas\\masterpage\\masterpage.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|c:\\users\\desarrollador1\\desktop\\ticketssistemas\\ticketssistemas\\content\\masterpage\\js\\soporte-tickets.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|solutionrelative:ticketssistemas\\content\\masterpage\\js\\soporte-tickets.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|c:\\users\\desarrollador1\\desktop\\ticketssistemas\\ticketssistemas\\content\\masterpage\\js\\login-tickets.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|solutionrelative:ticketssistemas\\content\\masterpage\\js\\login-tickets.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\ticketssistemas\\presentacion\\controlticketssoporte.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|solutionrelative:ticketssistemas\\presentacion\\controlticketssoporte.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\ticketssistemas\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|solutionrelative:ticketssistemas\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\ticketssistemas\\content\\masterpage\\css\\soporte-tickets.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|solutionrelative:ticketssistemas\\content\\masterpage\\css\\soporte-tickets.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|c:\\users\\desarrollador1\\desktop\\ticketssistemas\\ticketssistemas\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|solutionrelative:ticketssistemas\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\ticketssistemas\\logout.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|solutionrelative:ticketssistemas\\logout.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\ticketssistemas\\presentacion\\controlticketssoporte.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E60D80E6-D9B7-450B-9AB5-51DB16FA26A0}|TicketsSistemas\\TicketsSistemas.csproj|solutionrelative:ticketssistemas\\presentacion\\controlticketssoporte.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,6 +35,55 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "soporte-tickets.js",
+              "DocumentMoniker": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Content\\MasterPage\\js\\soporte-tickets.js",
+              "RelativeDocumentMoniker": "TicketsSistemas\\Content\\MasterPage\\js\\soporte-tickets.js",
+              "ToolTip": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Content\\MasterPage\\js\\soporte-tickets.js",
+              "RelativeToolTip": "TicketsSistemas\\Content\\MasterPage\\js\\soporte-tickets.js",
+              "ViewState": "AQIAAGoBAAAAAAAAAAAYwIcCAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-14T00:34:07.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "soporte-tickets.css",
+              "DocumentMoniker": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Content\\MasterPage\\css\\soporte-tickets.css",
+              "RelativeDocumentMoniker": "TicketsSistemas\\Content\\MasterPage\\css\\soporte-tickets.css",
+              "ToolTip": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Content\\MasterPage\\css\\soporte-tickets.css",
+              "RelativeToolTip": "TicketsSistemas\\Content\\MasterPage\\css\\soporte-tickets.css",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAcwBwAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-14T00:35:09.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ControlTicketsSoporte.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Presentacion\\ControlTicketsSoporte.aspx.cs",
+              "RelativeDocumentMoniker": "TicketsSistemas\\Presentacion\\ControlTicketsSoporte.aspx.cs",
+              "ToolTip": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Presentacion\\ControlTicketsSoporte.aspx.cs",
+              "RelativeToolTip": "TicketsSistemas\\Presentacion\\ControlTicketsSoporte.aspx.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAQwC8AAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T00:27:03.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Logout.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Logout.aspx.cs",
+              "RelativeDocumentMoniker": "TicketsSistemas\\Logout.aspx.cs",
+              "ToolTip": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Logout.aspx.cs",
+              "RelativeToolTip": "TicketsSistemas\\Logout.aspx.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAABVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T00:18:11.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ControlTicketsSoporte.aspx",
               "DocumentMoniker": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Presentacion\\ControlTicketsSoporte.aspx",
               "RelativeDocumentMoniker": "TicketsSistemas\\Presentacion\\ControlTicketsSoporte.aspx",
@@ -54,99 +91,7 @@
               "RelativeToolTip": "TicketsSistemas\\Presentacion\\ControlTicketsSoporte.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-05-14T00:05:21.006Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MasterPage.Master",
-              "DocumentMoniker": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\MASTERPAGE\\MasterPage.Master",
-              "RelativeDocumentMoniker": "TicketsSistemas\\MASTERPAGE\\MasterPage.Master",
-              "ToolTip": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\MASTERPAGE\\MasterPage.Master",
-              "RelativeToolTip": "TicketsSistemas\\MASTERPAGE\\MasterPage.Master",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-05-14T00:04:07.055Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "soporte-tickets.js",
-              "DocumentMoniker": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Content\\MasterPage\\js\\soporte-tickets.js",
-              "RelativeDocumentMoniker": "TicketsSistemas\\Content\\MasterPage\\js\\soporte-tickets.js",
-              "ToolTip": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Content\\MasterPage\\js\\soporte-tickets.js",
-              "RelativeToolTip": "TicketsSistemas\\Content\\MasterPage\\js\\soporte-tickets.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-05-13T22:32:45.308Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "login-tickets.js",
-              "DocumentMoniker": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Content\\MasterPage\\js\\login-tickets.js",
-              "RelativeDocumentMoniker": "TicketsSistemas\\Content\\MasterPage\\js\\login-tickets.js",
-              "ToolTip": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Content\\MasterPage\\js\\login-tickets.js",
-              "RelativeToolTip": "TicketsSistemas\\Content\\MasterPage\\js\\login-tickets.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-05-13T18:26:24.388Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Login.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Login.aspx.cs",
-              "RelativeDocumentMoniker": "TicketsSistemas\\Login.aspx.cs",
-              "ToolTip": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Login.aspx.cs",
-              "RelativeToolTip": "TicketsSistemas\\Login.aspx.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFgAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T15:19:29.025Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Login.aspx",
-              "DocumentMoniker": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Login.aspx",
-              "RelativeDocumentMoniker": "TicketsSistemas\\Login.aspx",
-              "ToolTip": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Login.aspx",
-              "RelativeToolTip": "TicketsSistemas\\Login.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-05-13T18:23:42.744Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MasterPage.Master.cs",
-              "DocumentMoniker": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\MASTERPAGE\\MasterPage.Master.cs",
-              "RelativeDocumentMoniker": "TicketsSistemas\\MASTERPAGE\\MasterPage.Master.cs",
-              "ToolTip": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\MASTERPAGE\\MasterPage.Master.cs",
-              "RelativeToolTip": "TicketsSistemas\\MASTERPAGE\\MasterPage.Master.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAABkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T19:58:13.121Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ControlTicketsSoporte.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Presentacion\\ControlTicketsSoporte.aspx.cs",
-              "RelativeDocumentMoniker": "TicketsSistemas\\Presentacion\\ControlTicketsSoporte.aspx.cs",
-              "ToolTip": "C:\\Users\\desarrollador1\\Desktop\\TicketsSistemas\\TicketsSistemas\\Presentacion\\ControlTicketsSoporte.aspx.cs",
-              "RelativeToolTip": "TicketsSistemas\\Presentacion\\ControlTicketsSoporte.aspx.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkBAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T18:20:45.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T00:05:21.006Z"
             }
           ]
         }
