@@ -21,7 +21,7 @@ namespace TicketsSistemas.Presentacion
     public partial class ControlTicketsSoporte : System.Web.UI.Page
     {
 
-        #region [ Carga Pagina ]
+        #region [ Page_Load ]
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Usuario"] == null)
@@ -264,6 +264,26 @@ namespace TicketsSistemas.Presentacion
         }
 
         [WebMethod]
+        public static JsonTicketResponse Btn_DataTable_Eliminar(int id_ticket)
+        {
+            JsonTicketResponse response = new JsonTicketResponse();
+            string rutaArchivo = new Negocio_Tickets().Metodo_Obtener_RutaArchivo(id_ticket);
+            if (File.Exists(rutaArchivo))
+            {
+                response.Success = true;
+                response.Message = "Solicitud & Evidencia Eliminados";
+                File.Delete(rutaArchivo);
+            }
+            else
+            {
+                response.Success = false;
+                response.Message = "Solicitud Eliminada";
+            }
+            new Negocio_Tickets().Btn_DataTable_Eliminar(id_ticket);
+            return response;
+        }
+
+        [WebMethod]
         public static Cls_Tickets Btn_DataTable_Informacion(int id_ticket)
         {
             try
@@ -286,36 +306,11 @@ namespace TicketsSistemas.Presentacion
         }
 
         [WebMethod]
-        public static JsonTicketResponse Btn_DataTable_Eliminar(int id_ticket)
-        {
-            JsonTicketResponse response = new JsonTicketResponse();
-            string rutaArchivo = new Negocio_Tickets().Metodo_Obtener_RutaArchivo(id_ticket);
-            if (File.Exists(rutaArchivo))
-            {
-                response.Success = true;
-                response.Message = "Solicitud & Evidencia Eliminados";
-                File.Delete(rutaArchivo);
-            }
-            else
-            {
-                response.Success = false;
-                response.Message = "Solicitud Eliminada";
-            }
-            new Negocio_Tickets().Btn_DataTable_Eliminar(id_ticket);
-            return response;
-        }
-
-        [WebMethod]
         public static void Btn_DataTable_Calificacion_Success(int id_ticket, int calificacion)
         {
             new Negocio_Tickets().Btn_DataTable_Calificacion_Success(id_ticket, calificacion);
         }
 
-        [WebMethod]
-        public static void Btn_DataTable_Calificacion_Error(int id_ticket, string mensaje)
-        {
-            new Negocio_Tickets().Btn_DataTable_Calificacion_Error(id_ticket, mensaje);
-        }
         #endregion
 
         public static void alert_general(Page page, string title, string subtitle, string type)

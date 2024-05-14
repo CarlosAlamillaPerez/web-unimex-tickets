@@ -497,56 +497,6 @@ $('#TicketsTable').on('click', 'button.btn-success', async function (event) {
     });
 });
 
-/* ERROR (ACTUALMENTE NO SE USA) */
-$('#TicketsTable2').on('click', 'button.btn-error', async function (event) {
-    event.preventDefault();
-    var id_ticket = $(this).data('id');
-
-    Swal.fire({
-        title: "¿No se encontró solución?",
-        input: "textarea",
-        inputPlaceholder: "Detalla el problema que presentas...",
-        icon: "question",
-        inputAttributes: {
-            autocapitalize: "off"
-        },
-        showCancelButton: true,
-        confirmButtonText: "Enviar",
-        showLoaderOnConfirm: true,
-        preConfirm: async (mensaje) => {
-            if (mensaje == "") {
-                Swal.showValidationMessage(`Describe tu problema &nbsp; <i class="fa-regular fa-face-sad-cry"></i>`);
-                return;
-            }
-            try {
-                await $.ajax({
-                    type: 'POST',
-                    url: 'ControlTicketsSoporte.aspx/Btn_DataTable_Calificacion_Error',
-                    data: JSON.stringify({ id_ticket: id_ticket, mensaje: mensaje }),
-                    contentType: 'application/json; charset=utf-8',
-                    dataType: 'json',
-                    success: function () {
-                        $('#TicketsTable').DataTable().ajax.reload();
-                        $('#TicketsTable2').DataTable().ajax.reload();
-                    },
-                    error: function (xhr, status, error) {
-                        console.error(xhr.responseText);
-                        Swal.showValidationMessage(`Error al enviar: ${error}`);
-                    }
-                });
-            } catch (error) {
-                Swal.showValidationMessage(`Error al enviar: ${error}`);
-            }
-        },
-        allowOutsideClick: () => !Swal.isLoading()
-    }).then((result) => {
-        if (result.isConfirmed) {
-            alert_time("Mensaje enviado", "success");
-        }
-    });
-});
-
-
 //////// FIN BOTONES DE TABLA  //////
 
 ////////////////////////////////////////////////  FIN ALERTAS ///////////////////////////////////////////////////////////////////////////
