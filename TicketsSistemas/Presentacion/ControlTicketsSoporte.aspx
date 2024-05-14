@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MASTERPAGE/MasterPage.Master" AutoEventWireup="true" CodeBehind="ControlTicketsSoporte.aspx.cs" Inherits="TicketsSistemas.Presentacion.ControlTicketsSoporte" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
-<%@ Register Src="~/UserControl/Message.ascx" TagPrefix="UCMessageBox" TagName="Msgbox" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -50,7 +49,6 @@
                 <div class="col-9">
                     <div class="row btn-title">
                         <button class="btn-title-item" id="ticket-inicio" data-target="ticket-inicio">Historial de Solicitudes</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <%--<button class="btn-title-item" id="ticket-fin" data-target="ticket-fin">Calificar Asistente</button>--%>
                     </div>
                     <div id="buttons_container"></div>
                     <div id="ticket-history" class="display" style="width: 100%">
@@ -66,26 +64,6 @@
                                     <th>CALIFICADO</th>
                                     <th>ASISTENTE</th>
                                     <th>CALIF.</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                            <tfoot>
-                            </tfoot>
-                        </table>
-                    </div>
-                    <div id="ticket-calificacion" class="display" style="display: none;">
-                        <table id="TicketsTable2" class="display TicketsTable" style="width: 100%">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>CONCEPTO</th>
-                                    <th>INCIDENCIA</th>
-                                    <th>GENERADO</th>
-                                    <th>INICIO</th>
-                                    <th>FIN</th>
-                                    <th>ESTATUS</th>
-                                    <th>ASISTENTE</th>
                                 </tr>
                             </thead>
                             <tbody>

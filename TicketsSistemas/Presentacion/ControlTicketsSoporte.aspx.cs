@@ -148,16 +148,6 @@ namespace TicketsSistemas.Presentacion
             int total = new Negocio_Tickets().Metodo_Obtener_TotalDataTable(dtp.search.value, id);
             return new DataTableTickets<Cls_Tickets>() { draw = dtp.draw, recordsFiltered = total, recordsTotal = total, data = ListaTickets };
         }
-        [WebMethod]
-        public static DataTableTickets<Cls_Tickets> TicketsTable2(string ClientParameters)
-        {
-            List<Cls_Tickets> ListaTickets = new List<Cls_Tickets>();
-            DataTableParameter dtp = JsonConvert.DeserializeObject<DataTableParameter>(ClientParameters);
-            int id = Convert.ToInt32(HttpContext.Current.Session["ClaveUsuario"]);
-            ListaTickets = new Negocio_Tickets().Metodo_Obtener_TicketsDataTable2(id, dtp.start, dtp.length, dtp.search.value);
-            int total = new Negocio_Tickets().Metodo_Obtener_TotalDataTable2(dtp.search.value, id);
-            return new DataTableTickets<Cls_Tickets>() { draw = dtp.draw, recordsFiltered = total, recordsTotal = total, data = ListaTickets };
-        }
         public class DataTableParameter
         {
             public int draw { get; set; }

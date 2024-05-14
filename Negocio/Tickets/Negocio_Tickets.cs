@@ -15,14 +15,6 @@ namespace Negocio.Tickets
             }
             catch (Exception ex) { throw ex; }
         }
-        public List<Cls_Tickets> Metodo_Obtener_TicketsDataTable2(int id_usuario, int pagina, int filas, string filtro)
-        {
-            try
-            {
-                return (new Datos_Tickets()).Metodo_Obtener_TicketsDataTable2(id_usuario, pagina, filas, filtro);
-            }
-            catch (Exception ex) { throw ex; }
-        }
         public List<Cls_Tickets> Metodo_DDL_Plantel(int clave_usuario)
         {
             try

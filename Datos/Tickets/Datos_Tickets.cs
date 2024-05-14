@@ -80,64 +80,6 @@ namespace Datos.Tickets
                 }
             }
         }
-        public List<Cls_Tickets> Metodo_Obtener_TicketsDataTable2(int id_usuario, int pagina, int filas, string filtro)
-        {
-            try
-            {
-                List<Cls_Tickets> lista = new List<Cls_Tickets>();
-
-                ClsDesEncripta oDesEnc = new ClsDesEncripta();
-                string BaseGeneralReg = ConfigurationManager.ConnectionStrings["ConSistemas"].ConnectionString;
-                string partereg = oDesEnc.Desencripta(ConfigurationManager.ConnectionStrings["ConexionMP"].ConnectionString);
-                cadenaConexion = new SqlConnection(BaseGeneralReg.ToString().Trim() + partereg.ToString().Trim());
-
-                using (SqlCommand cmd = new SqlCommand("sp_TicketsTable_2", cadenaConexion))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_usuario", id_usuario);
-                    cmd.Parameters.AddWithValue("@pagina", pagina);
-                    cmd.Parameters.AddWithValue("@cantidad_filas", filas);
-                    cmd.Parameters.AddWithValue("@filtro", filtro);
-
-                    cadenaConexion.Open();
-
-                    using (SqlDataReader dr = cmd.ExecuteReader())
-                    {
-                        while (dr.Read())
-                        {
-                            Cls_Tickets ticket = new Cls_Tickets
-                            {
-                                Id = Convert.ToInt32(dr["Id"]),
-                                //Usuario = dr["Usuario"].ToString(),
-                                Concepto = dr["Concepto"].ToString(),
-                                Incidencia = dr["Incidencia"].ToString(),
-                                Generado = dr["Generado"].ToString(),
-                                Inicio = dr["Inicio"].ToString(),
-                                Fin = dr["Fin"].ToString(),
-                                //Calificado = dr["Calificado"].ToString(),
-                                Status = dr["Status"].ToString(),
-                                AtencionTicket = dr["AtencionTicket"].ToString()
-                                //Calificacion = dr["Calificacion"].ToString()
-                            };
-                            lista.Add(ticket);
-                        }
-                    }
-                }
-
-                return lista;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                if (cadenaConexion.State == ConnectionState.Open)
-                {
-                    cadenaConexion.Close();
-                }
-            }
-        }
         public List<Cls_Tickets> Metodo_Obtener_CorreosNuevoTicket(int id_usuario)
         {
             try

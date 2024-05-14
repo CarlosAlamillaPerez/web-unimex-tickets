@@ -73,7 +73,6 @@ input[type='file'] {
     border: none;
     background: none;
     padding-left: 1%;
-    cursor: pointer;
     transition: color 0.5s, background-position 1s;
     background-image: linear-gradient(to bottom, #FFFFFF 50%, #004F93 50%);
     background-size: 100% 200%;
@@ -86,7 +85,7 @@ input[type='file'] {
 
     .btn-title-item:focus {
         outline: none;
-        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
     }
 
 /*////////////////////////////// TABLA-SQL //////////////////////////////*/
@@ -120,12 +119,6 @@ input[type='file'] {
 
 /* Información de registros (1 al 5 de un total de 50 registros) */
 #TicketsTable_info {
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    color: #666666;
-}
-
-#TicketsTable2_info {
     font-family: Arial, sans-serif;
     font-size: 11px;
     color: #666666;

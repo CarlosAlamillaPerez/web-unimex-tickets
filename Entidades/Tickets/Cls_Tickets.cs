@@ -30,7 +30,7 @@ namespace Entidades.Tickets
         public string ubicacion { get; set; }
         public string correo { get; set; }
 
-        // Metodo_Obtener_TicketsDataTable y Metodo_Obtener_TicketsDataTable2
+        // Metodo_Obtener_TicketsDataTable
         public int Id { get; set; }
         public int HasFile { get; set; }
         public string Concepto { get; set; }
