@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="ClsDesEncripta.cs" />
     <Compile Include="Cls_aplicaciones_seguridad.cs" />
-    <Compile Include="Cls_PlantelInfo.cs" />
     <Compile Include="Cls_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tickets\Cls_Tickets.cs" />

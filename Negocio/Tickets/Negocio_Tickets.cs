@@ -56,10 +56,6 @@ namespace Negocio.Tickets
         {
             return new Datos_Tickets().Metodo_Obtener_TotalDataTable(filtro, id);
         }
-        public int Metodo_Obtener_TotalDataTable2(string filtro, int id)
-        {
-            return new Datos_Tickets().Metodo_Obtener_TotalDataTable2(filtro, id);
-        }
         public string Metodo_Obtener_RutaArchivo(int id_ticket)
         {
             return new Datos_Tickets().Metodo_Obtener_RutaArchivo(id_ticket);

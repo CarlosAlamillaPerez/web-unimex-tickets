@@ -10,20 +10,9 @@ namespace Negocio
 {
     public class Home_Neg
     {
-        public List<Cls_PlantelInfo> CargaPlanteles(string Conexion)
+        public Cls_Usuario Metodo_Acceso_Login(string usuario, string password, string Conexion)
         {
-            try
-            {
-                return (new Home_Dat()).CargaPlanteles(Conexion);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-        public Cls_Usuario ValidaAcceso(string usuario, string password, string Conexion)
-        {
-            return (new Home_Dat().ValidaAcceso(usuario, password, Conexion));
+            return (new Home_Dat().Metodo_Acceso_Login(usuario, password, Conexion));
         }
     }
 }

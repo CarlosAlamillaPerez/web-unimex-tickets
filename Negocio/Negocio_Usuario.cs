@@ -14,13 +14,5 @@ namespace Negocio
         {
             return (new Usuario_Dat()).ValidarUsarioAccesoApp(clave_usuario, clave_aplicacion, Conexion);
         }
-        public Cls_Usuario ValidarUserPass(string usuario, string password, string conexion)
-        {
-            return (new Usuario_Dat()).ValidarUserPass(usuario, password, conexion);
-        }
-        public Cls_Usuario ValidarUserPassSecurity(string password, string Conexion)
-        {
-            return (new Usuario_Dat()).ValidarUserPassSecurity(password, Conexion);
-        }
     }
 }

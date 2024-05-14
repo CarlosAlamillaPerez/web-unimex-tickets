@@ -21,7 +21,6 @@ namespace Datos.Tickets
             string partereg = oDesEnc.Desencripta(ConfigurationManager.ConnectionStrings["ConexionMP"].ConnectionString);
             cadenaConexion = new SqlConnection(BaseGeneralReg.ToString().Trim() + partereg.ToString().Trim());
         }
-
         public List<Cls_Tickets> Metodo_Obtener_TicketsDataTable(int id_usuario, int pagina, int filas, string filtro)
         {
             try

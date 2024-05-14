@@ -19,10 +19,6 @@ namespace Entidades.Tickets
         public int id_empresa { get; set; } // Utiliza: Metodo_Obtener_CorreosNuevoTicket
         public string nombre_empresa { get; set; }
 
-        // Btn_DataTable_Calificacion_Success
-        public int id_calificacion { get; set; }
-        public string ds_calificacion { get; set; }
-
         // Metodo_Obtener_CorreosNuevoTicket
         public string nombre { get; set; }
         public int id_puesto { get; set; }

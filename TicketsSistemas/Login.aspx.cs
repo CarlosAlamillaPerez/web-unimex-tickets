@@ -33,7 +33,7 @@ namespace TicketsSistemas
 
                         
                         Login login = new Login();
-                        if (login.ValidaAcceso(user, pass))
+                        if (login.Metodo_Acceso_Login(user, pass))
                         {
                             string usuario = (string)HttpContext.Current.Session["Usuario"];
                             response.Success = true;
@@ -66,13 +66,13 @@ namespace TicketsSistemas
             return response;
         }
 
-        public bool ValidaAcceso(string _user, string Password)
+        public bool Metodo_Acceso_Login(string _user, string Password)
         {
             Cls_Usuario User = new Cls_Usuario();
             ClsDesEncripta oDesEnc = new ClsDesEncripta();
 
             string _pass = oDesEnc.Encripta(Password);
-            User = new Home_Neg().ValidaAcceso(_user, _pass, new Infraestructura.FactoryConection().GeneraConexion(7));
+            User = new Home_Neg().Metodo_Acceso_Login(_user, _pass, new Infraestructura.FactoryConection().GeneraConexion(7));
             if (User != null)
             {
                 HttpContext.Current.Session["ClaveUsuario"] = User.ClaveUsuario;
