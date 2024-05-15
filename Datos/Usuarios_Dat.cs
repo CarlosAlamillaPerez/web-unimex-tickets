@@ -12,12 +12,12 @@ namespace Datos
 {
     public class Usuario_Dat
     {
-        public List<Cls_aplicaciones_seguridad> ValidarUsarioAccesoApp(decimal clave_usuario, decimal clave_aplicacion, string Conexion)
+        public List<Cls_aplicaciones_seguridad> Metodo_Obtener_Acceso(decimal clave_usuario, decimal clave_aplicacion, string Conexion)
         {
             List<Cls_aplicaciones_seguridad> LoginAplicacionUser = new List<Cls_aplicaciones_seguridad>();
             using (SqlConnection con = new SqlConnection(Conexion))
             {
-                using (SqlCommand cmd = new SqlCommand("sp_Tickets_Metodo_Acceso_Login", con))
+                using (SqlCommand cmd = new SqlCommand("sp_Tickets_Metodo_Obtener_AccesoLoginAPP", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandTimeout = 0;

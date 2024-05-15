@@ -17,7 +17,7 @@ namespace Datos
             Cls_Usuario Loginuser = null;
             using (SqlConnection con = new SqlConnection(conexion))
             {
-                using (SqlCommand cmd = new SqlCommand("sp_Tickets_Metodo_Login", con))
+                using (SqlCommand cmd = new SqlCommand("sp_Tickets_Metodo_Obtener_AccesoLogin", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@usuario", usuario.Trim());

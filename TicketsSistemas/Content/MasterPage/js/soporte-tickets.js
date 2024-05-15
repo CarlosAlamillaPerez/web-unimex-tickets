@@ -39,10 +39,12 @@ new DataTable('#TicketsTable', {
     columns: [
         {
             data: 'Id',
+            orderable: false
         },
-        { data: 'Concepto' },
+        { data: 'Concepto', orderable: false },
         {
             data: 'Incidencia',
+            orderable: false,
             className: 'column-incidencia',
             render: function (data, type, row, meta) {
                 if (type === 'display' && data.length > 50) {
@@ -51,12 +53,12 @@ new DataTable('#TicketsTable', {
                 return data;
             }
         },
-        { data: 'Generado' },
-        { data: 'Inicio' },
-        { data: 'Fin' },
-        { data: 'Calificado' },
-        { data: 'AtencionTicket' },
-        { data: 'Calificacion' },
+        { data: 'Generado', orderable: false },
+        { data: 'Inicio', orderable: false },
+        { data: 'Fin', orderable: false },
+        { data: 'Calificado', orderable: false },
+        { data: 'AtencionTicket', orderable: false },
+        { data: 'Calificacion', orderable: false },
         {
             title: '',
             data: null,

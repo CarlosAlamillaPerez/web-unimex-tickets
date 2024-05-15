@@ -305,27 +305,6 @@ namespace Datos.Tickets
             }
             return total;
         }
-        public int Metodo_Obtener_TotalDataTable2(string filtro,int id)
-        {
-            int total = 0;
-
-            ClsDesEncripta oDesEnc = new ClsDesEncripta();
-            string BaseGeneralReg = ConfigurationManager.ConnectionStrings["ConSistemas"].ConnectionString;
-            string partereg = oDesEnc.Desencripta(ConfigurationManager.ConnectionStrings["ConexionMP"].ConnectionString);
-            cadenaConexion = new SqlConnection(BaseGeneralReg.ToString().Trim() + partereg.ToString().Trim());
-
-            using (SqlCommand cmd = new SqlCommand("select dbo.fn_dataTable_total_atendido(@filtro,@id_usuario)", cadenaConexion))
-            {
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@filtro", filtro);
-                cmd.Parameters.AddWithValue("@id_usuario", id);
-
-                cadenaConexion.Open();
-
-                total = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-            }
-            return total;
-        }
         public string Metodo_Obtener_RutaArchivo(int id_ticket)
         {
             string ruta = "";
@@ -522,39 +501,6 @@ namespace Datos.Tickets
                     {
                         cmd.Parameters.AddWithValue("@id_ticket", id);
                         cmd.Parameters.AddWithValue("@id_calificacion", calificacion);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.CommandTimeout = 0;
-                        cadenaConexion.Open();
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                correcto = true;
-            }
-            catch (Exception ex)
-            {
-                correcto = false;
-                throw ex;
-            }
-            finally
-            {
-                SqlConnection error = new SqlConnection();
-                if (error.State != ConnectionState.Closed)
-                    error.Close();
-                error.Dispose();
-            }
-            return correcto;
-        }
-        public bool Btn_DataTable_Calificacion_Error(int id, string mensaje)
-        {
-            bool correcto = false;
-            try
-            {
-                using (cadenaConexion)
-                {
-                    using (SqlCommand cmd = new SqlCommand("sp_Tickets_Btn_Calificacion_Error", cadenaConexion))
-                    {
-                        cmd.Parameters.AddWithValue("@id_ticket", id);
-                        cmd.Parameters.AddWithValue("@mensaje", mensaje);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.CommandTimeout = 0;
                         cadenaConexion.Open();

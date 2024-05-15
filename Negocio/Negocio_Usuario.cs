@@ -10,9 +10,9 @@ namespace Negocio
 {
     public class Negocio_Usuario
     {
-        public List<Cls_aplicaciones_seguridad> ValidarUsarioAccesoApp(decimal clave_usuario, decimal clave_aplicacion, string Conexion)
+        public List<Cls_aplicaciones_seguridad> Metodo_Obtener_Acceso(decimal clave_usuario, decimal clave_aplicacion, string Conexion)
         {
-            return (new Usuario_Dat()).ValidarUsarioAccesoApp(clave_usuario, clave_aplicacion, Conexion);
+            return (new Usuario_Dat()).Metodo_Obtener_Acceso(clave_usuario, clave_aplicacion, Conexion);
         }
     }
 }

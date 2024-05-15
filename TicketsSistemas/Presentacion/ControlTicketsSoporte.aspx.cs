@@ -59,7 +59,7 @@ namespace TicketsSistemas.Presentacion
         {
             try
             {
-                Cls_aplicaciones_seguridad Nivel_Acceso_App = (from l in new Negocio_Usuario().ValidarUsarioAccesoApp(Convert.ToInt32(Session["ClaveUsuario"]), 184, new FactoryConection().GeneraConexion(7).ToString()) where l.Clave_aplicacion == 184 select l).FirstOrDefault();
+                Cls_aplicaciones_seguridad Nivel_Acceso_App = (from l in new Negocio_Usuario().Metodo_Obtener_Acceso(Convert.ToInt32(Session["ClaveUsuario"]), 184, new FactoryConection().GeneraConexion(7).ToString()) where l.Clave_aplicacion == 184 select l).FirstOrDefault();
                 if (Nivel_Acceso_App == null)
                 {
                     ControlTicketsSoporte.alert_general(this, "Error", "Este usuario no tiene un nivel de acceso.", "error");

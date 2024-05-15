@@ -196,8 +196,6 @@ E:\Publicaciones\TicketsSistemas\Testing\TicketsSistemas\TicketsSistemas\bin\Dat
 E:\Publicaciones\TicketsSistemas\Testing\TicketsSistemas\TicketsSistemas\obj\Debug\TicketsSistemas.csprojResolveAssemblyReference.cache
 E:\Publicaciones\TicketsSistemas\Testing\TicketsSistemas\TicketsSistemas\obj\Debug\TicketsSistemas.dll
 E:\Publicaciones\TicketsSistemas\Testing\TicketsSistemas\TicketsSistemas\obj\Debug\TicketsSistemas.pdb
-C:\Users\desarrollador1\Desktop\TicketsSistemas\TicketsSistemas\obj\Debug\TicketsSistemas.csproj.AssemblyReference.cache
-C:\Users\desarrollador1\Desktop\TicketsSistemas\TicketsSistemas\obj\Debug\TicketsSistemas.csproj.CoreCompileInputs.cache
 C:\Users\desarrollador1\Desktop\TicketsSistemas\TicketsSistemas\bin\ApplicationInsights.config
 C:\Users\desarrollador1\Desktop\TicketsSistemas\TicketsSistemas\bin\roslyn\csc.exe
 C:\Users\desarrollador1\Desktop\TicketsSistemas\TicketsSistemas\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -236,6 +234,8 @@ C:\Users\desarrollador1\Desktop\TicketsSistemas\TicketsSistemas\bin\Microsoft.Ap
 C:\Users\desarrollador1\Desktop\TicketsSistemas\TicketsSistemas\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\desarrollador1\Desktop\TicketsSistemas\TicketsSistemas\bin\Newtonsoft.Json.xml
 C:\Users\desarrollador1\Desktop\TicketsSistemas\TicketsSistemas\bin\Datos.pdb
+C:\Users\desarrollador1\Desktop\TicketsSistemas\TicketsSistemas\obj\Debug\TicketsSistemas.csproj.AssemblyReference.cache
+C:\Users\desarrollador1\Desktop\TicketsSistemas\TicketsSistemas\obj\Debug\TicketsSistemas.csproj.CoreCompileInputs.cache
 C:\Users\desarrollador1\Desktop\TicketsSistemas\TicketsSistemas\obj\Debug\TicketsS.5649ED7A.Up2Date
 C:\Users\desarrollador1\Desktop\TicketsSistemas\TicketsSistemas\obj\Debug\TicketsSistemas.dll
 C:\Users\desarrollador1\Desktop\TicketsSistemas\TicketsSistemas\obj\Debug\TicketsSistemas.pdb

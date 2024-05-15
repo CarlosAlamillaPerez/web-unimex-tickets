@@ -104,14 +104,6 @@ namespace Negocio.Tickets
             }
             catch (Exception ex) { throw ex; }
         }
-        public bool Btn_DataTable_Calificacion_Error(int id, string mensaje)
-        {
-            try
-            {
-                return (new Datos_Tickets()).Btn_DataTable_Calificacion_Error(id, mensaje);
-            }
-            catch (Exception ex) { throw ex; }
-        }
 
     }
 }
