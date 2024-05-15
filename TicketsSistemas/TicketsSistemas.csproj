@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\MasterPage\css\soporte-tickets.css" />
+    <Content Include="Content\MasterPage\js\jquery-3.3.1.min.js" />
     <Content Include="Content\MasterPage\js\login-tickets.js" />
     <Content Include="Imagenes\Atrás.png" />
     <Content Include="Imagenes\CargarArchivo.png" />
