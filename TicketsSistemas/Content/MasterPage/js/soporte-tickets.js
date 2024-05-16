@@ -3,11 +3,7 @@ $('.btn-title-item').click(function (event) {
     event.preventDefault(); // Evita el comportamiento predeterminado del botón (Razon por la cual existe este JS, y la paginas no recarguen)
     var targetId = $(this).data('target');
     if (targetId === 'ticket-inicio') {
-        $('#ticket-history').show();
-        $('#ticket-calificacion').hide();
-    } else if (targetId === 'ticket-fin') {
-        $('#ticket-history').hide();
-        $('#ticket-calificacion').show();
+        $('#TicketsTable').DataTable().ajax.reload();
     }
 });
 
@@ -402,7 +398,7 @@ $('#TicketsTable').on('click', 'button.btn-eliminar', async function (event) {
                 if (response.d.Success) {
                     alert_time(response.d.Message, "success");
                 } else {
-                    alert_time(response.d.Message, "success");
+                    alert_general("Error",response.d.Message, "error");
                 }
                 $('#TicketsTable').DataTable().ajax.reload();
             },

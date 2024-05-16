@@ -31,10 +31,15 @@
             <div class="container">
                 <asp:ImageButton runat="server" ID="imgLogo" ImageUrl="~/Imagenes/LogoUnimex1.png" Width="12%" Enabled="false" />
                 <div class="welcome-text">
-                    <a href="../Logout.aspx">
-                        <asp:Label ID="Label1" runat="server" Text="Cerrar Sesión" ToolTip="Cerrar Sesión"></asp:Label>
-                        <img class="img-profile rounded-circle ml-2" src="../Imagenes/User.png" alt="User" width="30" />
-                    </a>
+                    <div>
+                            <asp:Label ID="lblBienvenida" runat="server" Text="Bienvenido"></asp:Label>
+                        <div style="text-align: right;">
+                            <a href="../Logout.aspx">
+                                <asp:Label ID="lblLogout" runat="server" Text="Cerrar Sesión" ToolTip="Cerrar Sesión"></asp:Label>
+                                <img class="img-profile rounded-circle ml-2" src="../Imagenes/User.png" alt="User" width="30" />
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>

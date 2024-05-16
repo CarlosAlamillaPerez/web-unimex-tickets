@@ -14,6 +14,7 @@ using TicketsSistemas.Infraestructura;
 using System.Web.UI.WebControls.Expressions;
 using Newtonsoft.Json;
 using File = System.IO.File;
+using System.Web.UI.WebControls;
 
 
 namespace TicketsSistemas.Presentacion
@@ -33,8 +34,22 @@ namespace TicketsSistemas.Presentacion
                 Response.Cookies["Usuario"].Expires = DateTime.Now.AddDays(-1);
             }
 
+            // Obtener los valores de las variables de sesión
+            string nombre = Session["Nombre"]?.ToString();
+            string apPaterno = Session["Ap_paterno"]?.ToString();
+            string apMaterno = Session["Ap_materno"]?.ToString();
+            string _usuario = Session["Usuario"]?.ToString();
+
             if (!IsPostBack)
             {
+                Label lblLogout = (Label)Master.FindControl("lblLogout");
+                Label lblBienvenida = (Label)Master.FindControl("lblBienvenida");
+                if (lblLogout != null)
+                {
+                    lblBienvenida.Text = $"{nombre} {apPaterno} {apMaterno}";
+                    lblLogout.Text = $"Cerrar Sesión";
+                }
+
                 if (Session["Usuario"] == null)
                 {
                     Response.Redirect("~/Login.aspx");
@@ -268,18 +283,26 @@ namespace TicketsSistemas.Presentacion
         {
             JsonTicketResponse response = new JsonTicketResponse();
             string rutaArchivo = new Negocio_Tickets().Metodo_Obtener_RutaArchivo(id_ticket);
-            if (File.Exists(rutaArchivo))
+            try
             {
-                response.Success = true;
-                response.Message = "Solicitud & Evidencia Eliminados";
-                File.Delete(rutaArchivo);
+                if (File.Exists(rutaArchivo))
+                {
+                    response.Success = true;
+                    response.Message = "Solicitud & Evidencia Eliminados";
+                    File.Delete(rutaArchivo);
+                }
+                else
+                {
+                    response.Success = true;
+                    response.Message = "Solicitud Eliminada";
+                }
+                new Negocio_Tickets().Btn_DataTable_Eliminar(id_ticket);
             }
-            else
+            catch
             {
                 response.Success = false;
-                response.Message = "Solicitud Eliminada";
+                response.Message = "Tu solicitud ya está siendo atendida por un asistente";
             }
-            new Negocio_Tickets().Btn_DataTable_Eliminar(id_ticket);
             return response;
         }
 
