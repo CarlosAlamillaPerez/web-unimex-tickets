@@ -68,11 +68,11 @@ namespace Negocio.Tickets
             }
             catch (Exception ex) { throw ex; }
         }
-        public bool Metodo_EnviarCorreos_TicketGenerado(int id_ticket, string nombre_usuario, string incidencia, int id_usuario)
+        public bool Metodo_EnviarCorreos_TicketGenerado(int id_ticket, int id_usuario)
         {
             try
             {
-                return new Datos_Tickets().Metodo_EnviarCorreos_TicketGenerado(id_ticket, nombre_usuario, incidencia, id_usuario);
+                return new Datos_Tickets().Metodo_EnviarCorreos_TicketGenerado(id_ticket, id_usuario);
             }
             catch (Exception ex)
             {
@@ -96,11 +96,11 @@ namespace Negocio.Tickets
             }
             catch (Exception ex) { throw ex; }
         }
-        public bool Btn_DataTable_Calificacion_Success(int id, int calificacion)
+        public bool Btn_DataTable_Calificacion_Success(int id, int calificacion, string mensaje)
         {
             try
             {
-                return (new Datos_Tickets()).Btn_DataTable_Calificacion_Success(id, calificacion);
+                return (new Datos_Tickets()).Btn_DataTable_Calificacion_Success(id, calificacion, mensaje);
             }
             catch (Exception ex) { throw ex; }
         }

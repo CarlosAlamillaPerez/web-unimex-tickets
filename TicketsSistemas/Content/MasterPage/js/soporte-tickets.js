@@ -444,57 +444,65 @@ $('#TicketsTable').on('click', 'button.btn-success', async function (event) {
     var id_ticket = $(this).data('id');
     Swal.fire({
         title: `Problema resuelto <i class="fa-regular fa-face-laugh-wink"></i>`,
-        input: "select",
-        inputOptions: {
-            Opciones: {
-                1: `Excelente`,
-                2: `Muy Buena`,
-                3: `Buena`,
-                4: `Regular`,
-                5: `Mala`,
+        html: `
+        <div style="width: min-content;">
+            <select id="swal-select" class="swal2-select">
+                <option value="" disabled selected>Por favor, califica la atención recibida.</option>
+                <option value=1>Excelente</option>
+                <option value=2>Muy Buena</option>
+                <option value=3>Buena</option>
+                <option value=4>Regular</option>
+                <option value=5>Mala</option>
+            </select>
+            <input type="text" id="swal-input" class="swal2-input" placeholder="Comentario  (Opcional)">
+        </div>
+        `,
+        focusConfirm: false,
+        preConfirm: () => {
+            const calificacion = document.getElementById('swal-select').value;
+            const mensaje = document.getElementById('swal-input').value.trim();
+
+            return {
+                calificacion: calificacion,
+                mensaje: mensaje !== '' ? mensaje : ''
             }
-        },
-        inputPlaceholder: "Por favor, califica la atención recibida.",
-        //icon: "success",
-        inputAttributes: {
-            autocapitalize: "off"
         },
         confirmButtonText: "Enviar",
         showCancelButton: true,
         showLoaderOnConfirm: true,
-        preConfirm: async (calificacion) => {
+        allowOutsideClick: () => !Swal.isLoading()
+    }).then(async (result) => {
+        if (result.isConfirmed) {
+            const { calificacion, mensaje } = result.value;
+
             if (!calificacion) {
                 Swal.showValidationMessage(`Selecciona una opción.`);
                 return;
             }
+
             try {
                 await $.ajax({
                     type: 'POST',
                     url: 'ControlTicketsSoporte.aspx/Btn_DataTable_Calificacion_Success',
-                    data: JSON.stringify({ id_ticket: id_ticket, calificacion: calificacion }),
+                    data: JSON.stringify({ id_ticket: id_ticket, calificacion: calificacion, mensaje: mensaje }),
                     contentType: 'application/json; charset=utf-8',
                     dataType: 'json',
                     success: function () {
                         $('#TicketsTable').DataTable().ajax.reload();
-                        $('#TicketsTable2').DataTable().ajax.reload();
                     },
                     error: function (xhr, status, error) {
                         console.error(xhr.responseText);
                         Swal.showValidationMessage(`Error al enviar: ${error}`);
                     }
                 });
+
+                alert_time("Calificación enviada.", "success");
             } catch (error) {
                 Swal.showValidationMessage(`Error al enviar: ${error}`);
             }
-        },
-        allowOutsideClick: () => !Swal.isLoading()
-    }).then((result) => {
-        if (result.isConfirmed) {
-            alert_time("Calificación enviada.", "success");
         }
     });
 });
-
 //////// FIN BOTONES DE TABLA  //////
 
 ////////////////////////////////////////////////  FIN ALERTAS ///////////////////////////////////////////////////////////////////////////

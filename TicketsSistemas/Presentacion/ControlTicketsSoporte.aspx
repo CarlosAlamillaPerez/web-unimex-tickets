@@ -12,7 +12,7 @@
         <div class="container mt-2">
             <div class="row">
                 <div class="col-3 new-ticket">
-                    <h2 class="new-ticket-title">Nueva Solicitud</h2>
+                    <h2 class="new-ticket-title">Nuevo Ticket</h2>
                     <div class="row">
                         <div class="form-group col-lg-12">
                             <asp:Label ID="lblPlantel" runat="server" Text="Plantel" class="new-ticket-subtitle "></asp:Label>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="col-9">
                     <div class="row btn-title">
-                        <button class="btn-title-item" id="ticket-inicio" data-target="ticket-inicio">Historial de Solicitudes</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn-title-item" id="ticket-inicio" data-target="ticket-inicio" title="RECARGAR TABLA">Historial de Tickets&nbsp;&nbsp;<i class="fa-solid fa-rotate-right"></i></button>
                     </div>
                     <div id="buttons_container"></div>
                     <div id="ticket-history" class="display" style="width: 100%">
@@ -57,11 +57,11 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>CONCEPTO</th>
-                                    <th>INCIDENCIA</th>
-                                    <th>SOLICITADO</th>
-                                    <th>INICIO</th>
-                                    <th>FIN</th>
-                                    <th>CALIFICADO</th>
+                                    <th>DETALLE</th>
+                                    <th>INICIADO</th>
+                                    <th>EN PROGRESO</th>
+                                    <th>ATENDIDO</th>
+                                    <th>CERRADO</th>
                                     <th>ASISTENTE</th>
                                     <th>CALIF.</th>
                                 </tr>
@@ -78,15 +78,18 @@
 
 
         <div id="modal-informacion" style="display: none;">
-            <div id="modal-titulo">Solicitud #<span id="id_ticket"></span></div>
+            <div id="modal-titulo">Ticket #<span id="id_ticket"></span></div>
             <div id="modal-contenido">
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <tbody>
                             <tr>
-                                <td>Asistente:<br /><span id="asistente"></span></td>
-                                <td>Soporte:<br /><span id="soporte"></span></td>
-                                <td>Concepto:<br /><span id="concepto"></span></td>
+                                <td>Asistente:<br />
+                                    <span id="asistente"></span></td>
+                                <td>Soporte:<br />
+                                    <span id="soporte"></span></td>
+                                <td>Concepto:<br />
+                                    <span id="concepto"></span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -112,8 +115,10 @@
                     <table class="table table-striped">
                         <tbody>
                             <tr>
-                                <td>Calificación:<br /><span id="calificacion"></span></td>
-                                <td>Tiempo de solución:<br /><span id="tiempo_respuesta"></span>&nbsp;Hrs.</td>
+                                <td>Calificación:<br />
+                                    <span id="calificacion"></span></td>
+                                <td>Tiempo de solución:<br />
+                                    <span id="tiempo_respuesta"></span></td>
                             </tr>
                         </tbody>
                     </table>

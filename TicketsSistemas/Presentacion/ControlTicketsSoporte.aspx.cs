@@ -214,7 +214,9 @@ namespace TicketsSistemas.Presentacion
                             case 4: plantel = "Polanco"; break;
                             case 5: plantel = "Veracruz"; break;
                         }
-                        string path = ConfigurationManager.AppSettings["RutaEvidenciasTickets"].ToString() + plantel + "\\" + id_ticket + "\\" + fileName;
+                        string rutaVirtual = "~/Evidencias_Tickets/";
+                        string rutaFisica = HttpContext.Current.Server.MapPath(rutaVirtual);
+                        string path = Path.Combine(rutaFisica, plantel, id_ticket.ToString(), fileName);
                         if (!Directory.Exists(Path.GetDirectoryName(path)))
                         {
                             Directory.CreateDirectory(Path.GetDirectoryName(path));
@@ -222,11 +224,9 @@ namespace TicketsSistemas.Presentacion
                         File.WriteAllBytes(path, bytes);
                         (new Negocio_Tickets()).Metodo_Guardar_RutaArchivo(path, id_ticket);
                     }
-
-                    string nombre_usuario = HttpContext.Current.Session["Nombre"].ToString() + " " + HttpContext.Current.Session["Ap_paterno"] + " " + HttpContext.Current.Session["Ap_materno"];
                     string incidencia = detalle;
                     int id_usuario = Convert.ToInt32(HttpContext.Current.Session["ClaveUsuario"]);
-                    new Negocio_Tickets().Metodo_EnviarCorreos_TicketGenerado(id_ticket, nombre_usuario, incidencia, id_usuario);
+                    new Negocio_Tickets().Metodo_EnviarCorreos_TicketGenerado(id_ticket, id_usuario);
                     response.Success = true;
                     response.Message = "Te avisaremos por correo cuando iniciemos tu solicitud";
                 }
@@ -235,6 +235,7 @@ namespace TicketsSistemas.Presentacion
                     response.Success = false;
                     response.Message = "Necesitas describir el problema que presentas";
                 }
+                return response;
             }
             catch (Exception ex)
             {
@@ -329,9 +330,9 @@ namespace TicketsSistemas.Presentacion
         }
 
         [WebMethod]
-        public static void Btn_DataTable_Calificacion_Success(int id_ticket, int calificacion)
+        public static void Btn_DataTable_Calificacion_Success(int id_ticket, int calificacion, string mensaje)
         {
-            new Negocio_Tickets().Btn_DataTable_Calificacion_Success(id_ticket, calificacion);
+            new Negocio_Tickets().Btn_DataTable_Calificacion_Success(id_ticket, calificacion, mensaje);
         }
 
         #endregion

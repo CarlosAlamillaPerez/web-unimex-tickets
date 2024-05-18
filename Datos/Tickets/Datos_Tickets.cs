@@ -284,7 +284,50 @@ namespace Datos.Tickets
             return historial;
         }
 
-        public int Metodo_Obtener_TotalDataTable(string filtro,int id)
+        public Cls_Tickets Metodo_Obtener_InfoTicket(int id_ticket)
+        {
+            Cls_Tickets ticket = null;
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_Tickets_Btn_Informacion", cadenaConexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_ticket", id_ticket);
+
+                    cadenaConexion.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            ticket = new Cls_Tickets
+                            {
+                                Incidencia = reader["Incidencia"].ToString(),
+                                Soporte = reader["Soporte"].ToString(),
+                                Concepto = reader["Concepto"].ToString(),
+                                Asistente = reader["Asistente"].ToString(),
+                                Usuario = reader["Usuario"].ToString()
+                            };
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener la información del ticket: " + ex.Message);
+            }
+            finally
+            {
+                if (cadenaConexion.State == ConnectionState.Open)
+                {
+                    cadenaConexion.Close();
+                }
+            }
+
+            return ticket;
+        }
+        public int Metodo_Obtener_TotalDataTable(string filtro, int id)
         {
             int total = 0;
 
@@ -330,7 +373,7 @@ namespace Datos.Tickets
             finally
             {
                 if (cadenaConexion.State != ConnectionState.Closed)
-                    cadenaConexion.Close(); 
+                    cadenaConexion.Close();
             }
             return ruta;
         }
@@ -367,12 +410,16 @@ namespace Datos.Tickets
             }
             return correcto;
         }
-        public bool Metodo_EnviarCorreos_TicketGenerado(int id_ticket, string nombre_usuario, string incidencia, int id_usuario)
+        public bool Metodo_EnviarCorreos_TicketGenerado(int id_ticket, int id_usuario)
         {
             try
             {
+                // Obtener la información del ticket utilizando el método Metodo_Obtener_InfoTicket
+                Cls_Tickets ticket = Metodo_Obtener_InfoTicket(id_ticket);
+
                 // Obtener los correos de la base de datos "ConexionM"
                 List<Cls_Tickets> correos = Metodo_Obtener_CorreosNuevoTicket(id_usuario);
+
 
                 // Configura el objeto System.Net.Mail.MailMessage
                 System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage();
@@ -394,19 +441,19 @@ namespace Datos.Tickets
 
                 foreach (Cls_Tickets correo in correos)
                 {
-                    string nombreUsuario = correo.nombre;
-                    string destinatario = correo.correo;
-
                     // Cuerpo del correo utilizando concatenación de cadenas
-                    var body = "Estimado(a) usuario(a) " + nombreUsuario + ", Buen día.<br/><br/>" +
-                        "Te informamos que se acaba de levantar el ticket #" + id_ticket + ", el soporte fue solicitado por " + nombre_usuario + ".<br/><br/>" +
-                        "Los detalles de la incidencia son: " + incidencia + "<br/><br/>" +
-                        "Por favor ingresa al Portal de Sistemas, para dar seguimiento al ticket levantado.<br/><br/>" +
-                        "Atentamente: Gerencia Corporativa de Cómputo y Sistemas.";
+                    var body = "Estimado(a) " + correo.nombre + ", Buen día.<br/><br/>" +
+                                "Te informamos que se acaba de levantar el ticket #" + id_ticket + ", el soporte fue solicitado por " + ticket.Usuario + ".<br/><br/>" +
+                                "Los detalles del ticket son los siguientes:<br/><br/>" +
+                                "- Soporte: " + ticket.Soporte + "<br/>" +
+                                "- Concepto: " + ticket.Concepto + "<br/>" +
+                                "- Incidencia: " + ticket.Incidencia + "<br/><br/><br/>" +
+                                "Por favor ingresa al Portal de Sistemas, para dar seguimiento al ticket levantado.<br/><br/>" +
+                                "Atentamente: Gerencia Corporativa de Cómputo y Sistemas.";
 
                     message.Body = body;
                     message.To.Clear();
-                    message.To.Add(new System.Net.Mail.MailAddress(destinatario.Trim()));
+                    message.To.Add(new System.Net.Mail.MailAddress(correo.correo.Trim()));
 
                     // Enviar el correo
                     ClienteSmtp.Send(message);
@@ -490,7 +537,7 @@ namespace Datos.Tickets
             }
             return correcto;
         }
-        public bool Btn_DataTable_Calificacion_Success(int id, int calificacion)
+        public bool Btn_DataTable_Calificacion_Success(int id, int calificacion, string mensaje)
         {
             bool correcto = false;
             try
@@ -501,6 +548,7 @@ namespace Datos.Tickets
                     {
                         cmd.Parameters.AddWithValue("@id_ticket", id);
                         cmd.Parameters.AddWithValue("@id_calificacion", calificacion);
+                        cmd.Parameters.AddWithValue("@mensaje", mensaje);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.CommandTimeout = 0;
                         cadenaConexion.Open();

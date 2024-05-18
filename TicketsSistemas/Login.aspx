@@ -9,7 +9,7 @@
     <script src="<%: ResolveUrl("~/Content/MasterPage/js/jquery-3.3.1.min.js") %>" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <title>Sistemas de Solicitudes</title>
+    <title>Sistemas de Tickets</title>
 
 </head>
 <body style="background-image: url(Imagenes/Login/bg-01.png);">

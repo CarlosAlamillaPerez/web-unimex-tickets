@@ -76,6 +76,7 @@ input[type='file'] {
     transition: color 0.5s, background-position 1s;
     background-image: linear-gradient(to bottom, #FFFFFF 50%, #004F93 50%);
     background-size: 100% 200%;
+    cursor: pointer;
 }
 
     .btn-title-item:hover {
