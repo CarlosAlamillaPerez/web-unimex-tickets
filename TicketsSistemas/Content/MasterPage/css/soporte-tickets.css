@@ -58,6 +58,12 @@ input[type='file'] {
     opacity: 0;
     cursor: pointer;
 }
+
+#contador {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #666666;
+}
 /*/////////////////////////////////////////////////////////////// SEGUNDA SECCIÓN DE LA PÁGINA (TABLA DE TICKETS) //////////////////////////////////////////////////////////////////////////////////////////////////*/
 .btn-title {
     padding-left: 1%;

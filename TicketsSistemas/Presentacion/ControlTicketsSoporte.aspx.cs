@@ -54,13 +54,19 @@ namespace TicketsSistemas.Presentacion
                 {
                     Response.Redirect("~/Login.aspx");
                 }
+
                 Metodo_User_Access();
                 Metodo_DDL_Plantel();
                 Metodo_DDL_Soporte();
-                Metodo_DDL_Concepto();
+
+                // Cargar los datos de la opción 1 en ddlConcepto
+                int idTipoSoporte = 3; 
+                ddlConcepto.DataSource = (new Negocio_Tickets()).Metodo_DDL_Concepto(idTipoSoporte);
+                ddlConcepto.DataTextField = "ds_concepto";
+                ddlConcepto.DataValueField = "id_concepto";
+                ddlConcepto.DataBind();
 
                 Session.Timeout = 1440;
-                //this.Page.Form.Enctype = "multipart/form-data";
             }
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Cache.SetExpires(DateTime.UtcNow.AddHours(-1));
@@ -119,7 +125,7 @@ namespace TicketsSistemas.Presentacion
         {
             try
             {
-                ddlTipoSoporte.DataSource = (new Negocio_Tickets()).Metodo_DDL_Soporte();
+                ddlTipoSoporte.DataSource = new Negocio_Tickets().Metodo_DDL_Soporte();
                 ddlTipoSoporte.DataTextField = "ds_tipo_soporte";
                 ddlTipoSoporte.DataValueField = "id_tipo_soporte";
                 ddlTipoSoporte.DataBind();
@@ -130,24 +136,19 @@ namespace TicketsSistemas.Presentacion
             }
         }
 
-        private void Metodo_DDL_Concepto()
+        [WebMethod]
+        public static List<object> Metodo_DDL_Concepto(int idTipoSoporte)
         {
             try
             {
-                ddlConcepto.DataSource = (new Negocio_Tickets()).Metodo_DDL_Concepto(Convert.ToInt32(ddlTipoSoporte.SelectedValue));
-                ddlConcepto.DataTextField = "ds_concepto";
-                ddlConcepto.DataValueField = "id_concepto";
-                ddlConcepto.DataBind();
+                var conceptos = new Negocio_Tickets().Metodo_DDL_Concepto(idTipoSoporte);
+                var result = conceptos.Select(c => new { Value = c.id_concepto, Text = c.ds_concepto }).ToList<object>();
+                return result;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-        }
-
-        protected void ddlTipoSoporte_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Metodo_DDL_Concepto();
         }
 
         #endregion

@@ -6,6 +6,42 @@ $('.btn-title-item').click(function (event) {
         $('#TicketsTable').DataTable().ajax.reload();
     }
 });
+$(document).ready(function () {
+    $('[id$="txtDetalle"]').on('input', function () {
+        var maxLength = 200;
+        var currentText = $(this).val();
+
+        if (currentText.length > maxLength) {
+            $(this).val(currentText.substr(0, maxLength));
+        }
+
+        var remainingLength = maxLength - $(this).val().length;
+        $('#contador').text('Caracteres restantes: ' + remainingLength);
+    });
+
+    $('[id$="ddlTipoSoporte"]').change(function () {
+        var idTipoSoporte = $(this).val();
+        $.ajax({
+            type: 'POST',
+            url: 'ControlTicketsSoporte.aspx/Metodo_DDL_Concepto',
+            data: JSON.stringify({ idTipoSoporte: idTipoSoporte }),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            success: function (response) {
+                var conceptos = response.d;
+                var ddlConcepto = $('[id$="ddlConcepto"]');
+                ddlConcepto.empty();
+                $.each(conceptos, function (index, concepto) {
+                    ddlConcepto.append($('<option></option>').val(concepto.Value).text(concepto.Text));
+                });
+                console.log("DDL Concepto actualizado con los datos de la opción seleccionada.");
+            },
+            error: function (xhr, status, error) {
+                alert_general("ERROR", "No se pudo actualizar los datos del DDL Concepto.", "error");
+            }
+        });
+    });
+});
 
 ////////////////////////////////////////////////  INICIO TABLA       ///////////////////////////////////////////////////////////////////////
 
@@ -233,6 +269,7 @@ $('#btnAgregarNuevoTicket').click(function (event) {
                             $('[id$="txtDetalle"]').val('');
                             $('[id$="fileUpEvidencia"]').val('');
                             $('#nombre_file').text('');
+                            $('#contador').text('Caracteres restantes: 200');
                         } else {
                             alert_general("Error", response.d.Message, "warning");
                         }
@@ -262,6 +299,7 @@ $('#btnAgregarNuevoTicket').click(function (event) {
                         $('[id$="txtDetalle"]').val('');
                         $('[id$="fileUpEvidencia"]').val('');
                         $('#nombre_file').text('');
+                        $('#contador').text('Caracteres restantes: 200');
                     } else {
                         Swal.hideLoading();
                         alert_general("Error", response.d.Message, "warning");
@@ -398,7 +436,7 @@ $('#TicketsTable').on('click', 'button.btn-eliminar', async function (event) {
                 if (response.d.Success) {
                     alert_time(response.d.Message, "success");
                 } else {
-                    alert_general("Error",response.d.Message, "error");
+                    alert_general("Error", response.d.Message, "error");
                 }
                 $('#TicketsTable').DataTable().ajax.reload();
             },
@@ -454,7 +492,7 @@ $('#TicketsTable').on('click', 'button.btn-success', async function (event) {
                 <option value=4>Regular</option>
                 <option value=5>Mala</option>
             </select>
-            <input type="text" id="swal-input" class="swal2-input" placeholder="Comentario  (Opcional)">
+            <input type="text" id="swal-input" class="swal2-input" placeholder="Comentario (Opcional)" maxlength="200">
         </div>
         `,
         focusConfirm: false,

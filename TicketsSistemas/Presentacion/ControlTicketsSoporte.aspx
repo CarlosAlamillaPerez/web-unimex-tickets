@@ -20,15 +20,16 @@
                         </div>
                         <div class="form-group col-lg-12">
                             <asp:Label ID="lblTipoSoporte" runat="server" Text="TIPO DE SOPORTE" class="new-ticket-subtitle "></asp:Label>
-                            <asp:DropDownList ID="ddlTipoSoporte" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlTipoSoporte_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlTipoSoporte" runat="server" CssClass="form-control"></asp:DropDownList>
                         </div>
                         <div class="form-group col-lg-12">
                             <asp:Label ID="lblConcepto" runat="server" Text="Concepto" class="new-ticket-subtitle "></asp:Label>
                             <asp:DropDownList ID="ddlConcepto" runat="server" CssClass="form-control"></asp:DropDownList>
                         </div>
-                        <div class="form-group col-lg-12">
+                        <div class="col-lg-12">
                             <asp:Label ID="lblDetalle" runat="server" Text="Detalle" class="new-ticket-subtitle "></asp:Label>
                             <asp:TextBox ID="txtDetalle" TextMode="MultiLine" runat="server" CssClass="form-control"></asp:TextBox>
+                            <label id="contador">Caracteres restantes: 200</label>
                         </div>
                         <div class="col-12" id="ContenedorUpload" runat="server" visible="true">
                             <div class="wrapper">
